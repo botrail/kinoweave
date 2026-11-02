@@ -9,6 +9,7 @@ include environments/viz/pyproject.toml
 include environments/viz/uv.lock
 recursive-include docs *.md
 recursive-include examples *.py *.json *.yaml *.md
+recursive-include examples/assets/eight_ur5 *.glb *.txt *.png *.mp4
 prune examples/assets/ur5/source
 recursive-include tests *.py
 recursive-include .github/workflows *.yml

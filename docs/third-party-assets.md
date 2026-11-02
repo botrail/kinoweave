@@ -22,9 +22,12 @@ carry these documents together with the demo's
 including its notices, when sharing a run.
 
 The distributed Python wheel does not contain the downloaded robot meshes.
-The source distribution contains the demo settings and fetch helper; it does
-not bundle the downloaded source directory. See
-[the demo walkthrough](visualization.md#two-ur5-arms) for acquisition and use.
+The source distribution contains the demo settings, fetch helper and compiled
+GLB copies for the standalone [eight-arm showcase](eight-arm-demo.md), with
+their original license and attribution documents. See the
+[eight-arm asset notice](../examples/assets/eight_ur5/NOTICE.md). It does not
+bundle the downloaded source directory. See
+[the two-arm walkthrough](visualization.md#two-ur5-arms) for acquisition and use.
 
 ## Dependencies and your own assets
 

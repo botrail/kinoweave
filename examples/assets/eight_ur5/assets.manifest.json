@@ -1,0 +1,193 @@
+{
+  "conventions": {
+    "angle": "rad",
+    "handedness": "right",
+    "length": "m",
+    "pose_direction": "parent_from_local",
+    "quaternion_order": "xyzw",
+    "time": "s"
+  },
+  "format": "kinoweave.assets",
+  "models": [
+    {
+      "name": "ur5",
+      "sha256": "c9ce09f8d7a38672dcc761e0dda9fda1ebd1a37334461a6005ffc7e19d120e10"
+    }
+  ],
+  "notices": [
+    {
+      "name": "notices/69d6aaa72d964c5eac9dfac36dd0955f2f62562cf7de9d879e80788c35b7363e.txt",
+      "sha256": "69d6aaa72d964c5eac9dfac36dd0955f2f62562cf7de9d879e80788c35b7363e"
+    },
+    {
+      "name": "notices/95770dc3fc9889d34fa5569ce4c4fa231c163c055c5aa322402413332f832a50.txt",
+      "sha256": "95770dc3fc9889d34fa5569ce4c4fa231c163c055c5aa322402413332f832a50"
+    },
+    {
+      "name": "notices/592eb18ed9de08177128a9f74b27bab00b92ad01336899e8cab262d5c1dbbcbf.txt",
+      "sha256": "592eb18ed9de08177128a9f74b27bab00b92ad01336899e8cab262d5c1dbbcbf"
+    }
+  ],
+  "problem_digest": "cb85415a33c2bc07db36378414e2d175264fa019c0c9145a53698c1f5c8eeff1",
+  "schema_version": 1,
+  "sources": [
+    {
+      "name": "ur5:collision_spheres",
+      "sha256": "2822c93add20fe9214e671f56db85d182623e79ac1c7d2641deed47248d68622"
+    },
+    {
+      "name": "ur5:compiled_visual:base_link",
+      "sha256": "9df01b6128dc01be0a87663ea26bd7261979dae08a6f4e0d75ff20e3ca493342"
+    },
+    {
+      "name": "ur5:compiled_visual:forearm_link",
+      "sha256": "e6d731840d4cefb016ef5e6fc74701e61e7f7e3d3d9eca5ac3cc53ce8efbf7a3"
+    },
+    {
+      "name": "ur5:compiled_visual:shoulder_link",
+      "sha256": "4552969abf4651351227de6f2228cff3cd2bfaf0957901b515754075d894ed54"
+    },
+    {
+      "name": "ur5:compiled_visual:upper_arm_link",
+      "sha256": "6f34b234364b24e91a7d427768d533e07851e488afe8671d88ea893f1ae1995c"
+    },
+    {
+      "name": "ur5:compiled_visual:wrist_1_link",
+      "sha256": "96f287ebc7e69d828f7eb232df35d4b3ee6b39f01bcb89c1f7590a75902a7067"
+    },
+    {
+      "name": "ur5:compiled_visual:wrist_2_link",
+      "sha256": "9a764bbc14c5bca1344e19d3d733bfdf6570f4454373cd0a3af683df0740c1eb"
+    },
+    {
+      "name": "ur5:compiled_visual:wrist_3_link",
+      "sha256": "80abea728fd050afaddb4381008ec13bacfba8d6925c702584a23b9fd222ebad"
+    },
+    {
+      "name": "ur5:configuration",
+      "sha256": "046980c11d0cfc94f21e6d89b9102eace19cf98754f1e2375f92bf64c869e172"
+    },
+    {
+      "name": "ur5:mesh:package://example-robot-data/robots/ur_description/meshes/ur5/collision/base.stl",
+      "sha256": "c7af57d109de6a73f57943613bb000346518df06bb5ae119a2e80cf00bcbebde"
+    },
+    {
+      "name": "ur5:mesh:package://example-robot-data/robots/ur_description/meshes/ur5/collision/forearm.stl",
+      "sha256": "8e79aa80a532494ba5320c30b40363ff63d228e3d59e2904703dca341dcba2ac"
+    },
+    {
+      "name": "ur5:mesh:package://example-robot-data/robots/ur_description/meshes/ur5/collision/shoulder.stl",
+      "sha256": "1d62e23a8c3ff9e6334fb157c805e6202037bcfca65bc6a36c5c9ae866751b3b"
+    },
+    {
+      "name": "ur5:mesh:package://example-robot-data/robots/ur_description/meshes/ur5/collision/upperarm.stl",
+      "sha256": "55c11ac0ad1e144f230849b2033532e8b140b2e818ea497296d08dfb88757440"
+    },
+    {
+      "name": "ur5:mesh:package://example-robot-data/robots/ur_description/meshes/ur5/collision/wrist1.stl",
+      "sha256": "0a1fd12150140efdee91650dcb4c2d0443065551a9207a2d2dbde58ff1fb4eb7"
+    },
+    {
+      "name": "ur5:mesh:package://example-robot-data/robots/ur_description/meshes/ur5/collision/wrist2.stl",
+      "sha256": "c1d9f7843366068cb331f3f5c43fa716d3eceeb8c80216eccbbc878905dab123"
+    },
+    {
+      "name": "ur5:mesh:package://example-robot-data/robots/ur_description/meshes/ur5/collision/wrist3.stl",
+      "sha256": "cf7220397b56f1d3047be9465eea1181d471b40fc82728052e31c97588585b4b"
+    },
+    {
+      "name": "ur5:mesh:package://example-robot-data/robots/ur_description/meshes/ur5/visual/base.dae",
+      "sha256": "2059aec60ceea5793181d52ecd07a25bac2a88f90182b96c4cf66f07cfb78de7"
+    },
+    {
+      "name": "ur5:mesh:package://example-robot-data/robots/ur_description/meshes/ur5/visual/forearm.dae",
+      "sha256": "d7b40d794f81ba1658a442be9e7f193d445053564444a29f952b6bf7028706a2"
+    },
+    {
+      "name": "ur5:mesh:package://example-robot-data/robots/ur_description/meshes/ur5/visual/shoulder.dae",
+      "sha256": "2bfa801f928dd92ec8a83826f84aa30ad511d53f4760f5f83c7385a1bc924aa1"
+    },
+    {
+      "name": "ur5:mesh:package://example-robot-data/robots/ur_description/meshes/ur5/visual/upperarm.dae",
+      "sha256": "0577221909b0b76445c4dd21c02aca97f04b5185fef7b33f5a484db679e3de34"
+    },
+    {
+      "name": "ur5:mesh:package://example-robot-data/robots/ur_description/meshes/ur5/visual/wrist1.dae",
+      "sha256": "1cc29d29a40f2eefc89a280236dac1317babcb583538e7b31fdbc621f6a284a0"
+    },
+    {
+      "name": "ur5:mesh:package://example-robot-data/robots/ur_description/meshes/ur5/visual/wrist2.dae",
+      "sha256": "d8cc770127fc7cc3c587594660971811b52092df75b6178895828f74df37ea0f"
+    },
+    {
+      "name": "ur5:mesh:package://example-robot-data/robots/ur_description/meshes/ur5/visual/wrist3.dae",
+      "sha256": "8ee319c507ad0e0db4d77594cc03192f1660a3d0db03bae6f827518876d027af"
+    },
+    {
+      "name": "ur5:notice:NOTICE.md",
+      "sha256": "592eb18ed9de08177128a9f74b27bab00b92ad01336899e8cab262d5c1dbbcbf"
+    },
+    {
+      "name": "ur5:notice:source/LICENSE",
+      "sha256": "69d6aaa72d964c5eac9dfac36dd0955f2f62562cf7de9d879e80788c35b7363e"
+    },
+    {
+      "name": "ur5:notice:source/robots/ur_description/README.md",
+      "sha256": "95770dc3fc9889d34fa5569ce4c4fa231c163c055c5aa322402413332f832a50"
+    },
+    {
+      "name": "ur5:urdf",
+      "sha256": "cede880fc2a987ef9dd23bbcda3e0ad1e7b1df8b58d638d100cfbff8ebc806cb"
+    }
+  ],
+  "visuals": [
+    {
+      "file": "assets/9df01b6128dc01be0a87663ea26bd7261979dae08a6f4e0d75ff20e3ca493342.glb",
+      "link": "base_link",
+      "model": "ur5",
+      "sha256": "9df01b6128dc01be0a87663ea26bd7261979dae08a6f4e0d75ff20e3ca493342"
+    },
+    {
+      "file": "assets/e6d731840d4cefb016ef5e6fc74701e61e7f7e3d3d9eca5ac3cc53ce8efbf7a3.glb",
+      "link": "forearm_link",
+      "model": "ur5",
+      "sha256": "e6d731840d4cefb016ef5e6fc74701e61e7f7e3d3d9eca5ac3cc53ce8efbf7a3"
+    },
+    {
+      "file": "assets/4552969abf4651351227de6f2228cff3cd2bfaf0957901b515754075d894ed54.glb",
+      "link": "shoulder_link",
+      "model": "ur5",
+      "sha256": "4552969abf4651351227de6f2228cff3cd2bfaf0957901b515754075d894ed54"
+    },
+    {
+      "file": "assets/6f34b234364b24e91a7d427768d533e07851e488afe8671d88ea893f1ae1995c.glb",
+      "link": "upper_arm_link",
+      "model": "ur5",
+      "sha256": "6f34b234364b24e91a7d427768d533e07851e488afe8671d88ea893f1ae1995c"
+    },
+    {
+      "file": "assets/d672ed8320ac427b4788967450dd096209f9fd1fcb37d2323b1e6873413e56af.glb",
+      "link": "weld_tcp",
+      "model": "ur5",
+      "sha256": "d672ed8320ac427b4788967450dd096209f9fd1fcb37d2323b1e6873413e56af"
+    },
+    {
+      "file": "assets/96f287ebc7e69d828f7eb232df35d4b3ee6b39f01bcb89c1f7590a75902a7067.glb",
+      "link": "wrist_1_link",
+      "model": "ur5",
+      "sha256": "96f287ebc7e69d828f7eb232df35d4b3ee6b39f01bcb89c1f7590a75902a7067"
+    },
+    {
+      "file": "assets/9a764bbc14c5bca1344e19d3d733bfdf6570f4454373cd0a3af683df0740c1eb.glb",
+      "link": "wrist_2_link",
+      "model": "ur5",
+      "sha256": "9a764bbc14c5bca1344e19d3d733bfdf6570f4454373cd0a3af683df0740c1eb"
+    },
+    {
+      "file": "assets/80abea728fd050afaddb4381008ec13bacfba8d6925c702584a23b9fd222ebad.glb",
+      "link": "wrist_3_link",
+      "model": "ur5",
+      "sha256": "80abea728fd050afaddb4381008ec13bacfba8d6925c702584a23b9fd222ebad"
+    }
+  ]
+}

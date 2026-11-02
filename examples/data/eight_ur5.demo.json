@@ -1,0 +1,1646 @@
+{
+  "format": "kinoweave.demo.eight-ur5",
+  "schema_version": 2,
+  "problem_digest": "dcf53edda3750f4f718cd86e63ea8c6824769492cdfe4ef97d6f71f39bfb19e9",
+  "tcp_link": "weld_tcp",
+  "workpiece": {
+    "format": "kinoweave.demo.weld-workpiece",
+    "schema_version": 1,
+    "center": [
+      0.0,
+      0.0,
+      0.725
+    ],
+    "surface_offset": 0.34,
+    "panel_half_width": 0.22,
+    "panel_height": 0.14,
+    "plate_thickness": 0.012,
+    "seam_offsets": [
+      -0.11,
+      0.11
+    ],
+    "frame_half_width": 0.3,
+    "frame_bottom": 0.35,
+    "frame_top": 1.1,
+    "frame_tube_width": 0.028,
+    "bead_center_offsets": [
+      -0.036,
+      -0.018,
+      0.0,
+      0.018,
+      0.036
+    ],
+    "level_offsets": [
+      -0.006,
+      0.006
+    ],
+    "bead_length": 0.008,
+    "approach_distance": 0.08,
+    "tool_length": 0.18,
+    "nozzle_gap": 0.012
+  },
+  "targets": [
+    {
+      "id": "arm01.weld01",
+      "skill": "arm01.weld01",
+      "robot": "arm01",
+      "seam": "joint02",
+      "parts": [
+        "workpiece_plate_0_1",
+        "workpiece_plate_0_2"
+      ],
+      "position": [
+        0.34,
+        0.11,
+        0.6829999999999999
+      ],
+      "start_position": [
+        0.34,
+        0.11,
+        0.6789999999999999
+      ],
+      "end_position": [
+        0.34,
+        0.11,
+        0.6869999999999999
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        -0.5,
+        -0.5,
+        0.5,
+        0.5
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm01.weld02",
+      "skill": "arm01.weld02",
+      "robot": "arm01",
+      "seam": "joint03",
+      "parts": [
+        "workpiece_plate_1_0",
+        "workpiece_plate_1_1"
+      ],
+      "position": [
+        0.11,
+        0.34,
+        0.701
+      ],
+      "start_position": [
+        0.11,
+        0.34,
+        0.697
+      ],
+      "end_position": [
+        0.11,
+        0.34,
+        0.705
+      ],
+      "normal": [
+        0,
+        1,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.7071067811865476,
+        -0.7071067811865475,
+        0.0
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm01.weld03",
+      "skill": "arm01.weld03",
+      "robot": "arm01",
+      "seam": "joint02",
+      "parts": [
+        "workpiece_plate_0_1",
+        "workpiece_plate_0_2"
+      ],
+      "position": [
+        0.34,
+        0.11,
+        0.719
+      ],
+      "start_position": [
+        0.34,
+        0.11,
+        0.715
+      ],
+      "end_position": [
+        0.34,
+        0.11,
+        0.723
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        -0.5,
+        -0.5,
+        0.5,
+        0.5
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm01.weld04",
+      "skill": "arm01.weld04",
+      "robot": "arm01",
+      "seam": "joint03",
+      "parts": [
+        "workpiece_plate_1_0",
+        "workpiece_plate_1_1"
+      ],
+      "position": [
+        0.11,
+        0.34,
+        0.737
+      ],
+      "start_position": [
+        0.11,
+        0.34,
+        0.733
+      ],
+      "end_position": [
+        0.11,
+        0.34,
+        0.741
+      ],
+      "normal": [
+        0,
+        1,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.7071067811865476,
+        -0.7071067811865475,
+        0.0
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm01.weld05",
+      "skill": "arm01.weld05",
+      "robot": "arm01",
+      "seam": "joint02",
+      "parts": [
+        "workpiece_plate_0_1",
+        "workpiece_plate_0_2"
+      ],
+      "position": [
+        0.34,
+        0.11,
+        0.755
+      ],
+      "start_position": [
+        0.34,
+        0.11,
+        0.751
+      ],
+      "end_position": [
+        0.34,
+        0.11,
+        0.759
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        -0.5,
+        -0.5,
+        0.5,
+        0.5
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm02.weld01",
+      "skill": "arm02.weld01",
+      "robot": "arm02",
+      "seam": "joint04",
+      "parts": [
+        "workpiece_plate_1_1",
+        "workpiece_plate_1_2"
+      ],
+      "position": [
+        -0.11,
+        0.34,
+        0.6829999999999999
+      ],
+      "start_position": [
+        -0.11,
+        0.34,
+        0.6789999999999999
+      ],
+      "end_position": [
+        -0.11,
+        0.34,
+        0.6869999999999999
+      ],
+      "normal": [
+        0,
+        1,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.7071067811865476,
+        -0.7071067811865475,
+        0.0
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm02.weld02",
+      "skill": "arm02.weld02",
+      "robot": "arm02",
+      "seam": "joint05",
+      "parts": [
+        "workpiece_plate_2_0",
+        "workpiece_plate_2_1"
+      ],
+      "position": [
+        -0.34,
+        0.11,
+        0.701
+      ],
+      "start_position": [
+        -0.34,
+        0.11,
+        0.697
+      ],
+      "end_position": [
+        -0.34,
+        0.11,
+        0.705
+      ],
+      "normal": [
+        -1,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        -0.5,
+        0.5,
+        -0.5,
+        0.5
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm02.weld03",
+      "skill": "arm02.weld03",
+      "robot": "arm02",
+      "seam": "joint04",
+      "parts": [
+        "workpiece_plate_1_1",
+        "workpiece_plate_1_2"
+      ],
+      "position": [
+        -0.11,
+        0.34,
+        0.719
+      ],
+      "start_position": [
+        -0.11,
+        0.34,
+        0.715
+      ],
+      "end_position": [
+        -0.11,
+        0.34,
+        0.723
+      ],
+      "normal": [
+        0,
+        1,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.7071067811865476,
+        -0.7071067811865475,
+        0.0
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm02.weld04",
+      "skill": "arm02.weld04",
+      "robot": "arm02",
+      "seam": "joint05",
+      "parts": [
+        "workpiece_plate_2_0",
+        "workpiece_plate_2_1"
+      ],
+      "position": [
+        -0.34,
+        0.11,
+        0.737
+      ],
+      "start_position": [
+        -0.34,
+        0.11,
+        0.733
+      ],
+      "end_position": [
+        -0.34,
+        0.11,
+        0.741
+      ],
+      "normal": [
+        -1,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        -0.5,
+        0.5,
+        -0.5,
+        0.5
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm02.weld05",
+      "skill": "arm02.weld05",
+      "robot": "arm02",
+      "seam": "joint04",
+      "parts": [
+        "workpiece_plate_1_1",
+        "workpiece_plate_1_2"
+      ],
+      "position": [
+        -0.11,
+        0.34,
+        0.755
+      ],
+      "start_position": [
+        -0.11,
+        0.34,
+        0.751
+      ],
+      "end_position": [
+        -0.11,
+        0.34,
+        0.759
+      ],
+      "normal": [
+        0,
+        1,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.7071067811865476,
+        -0.7071067811865475,
+        0.0
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm03.weld01",
+      "skill": "arm03.weld01",
+      "robot": "arm03",
+      "seam": "joint06",
+      "parts": [
+        "workpiece_plate_2_1",
+        "workpiece_plate_2_2"
+      ],
+      "position": [
+        -0.34,
+        -0.11,
+        0.6829999999999999
+      ],
+      "start_position": [
+        -0.34,
+        -0.11,
+        0.6789999999999999
+      ],
+      "end_position": [
+        -0.34,
+        -0.11,
+        0.6869999999999999
+      ],
+      "normal": [
+        -1,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        -0.5,
+        0.5,
+        -0.5,
+        0.5
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm03.weld02",
+      "skill": "arm03.weld02",
+      "robot": "arm03",
+      "seam": "joint07",
+      "parts": [
+        "workpiece_plate_3_0",
+        "workpiece_plate_3_1"
+      ],
+      "position": [
+        -0.11,
+        -0.34,
+        0.701
+      ],
+      "start_position": [
+        -0.11,
+        -0.34,
+        0.697
+      ],
+      "end_position": [
+        -0.11,
+        -0.34,
+        0.705
+      ],
+      "normal": [
+        0,
+        -1,
+        0
+      ],
+      "quaternion_xyzw": [
+        -0.7071067811865475,
+        0.0,
+        0.0,
+        0.7071067811865476
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm03.weld03",
+      "skill": "arm03.weld03",
+      "robot": "arm03",
+      "seam": "joint06",
+      "parts": [
+        "workpiece_plate_2_1",
+        "workpiece_plate_2_2"
+      ],
+      "position": [
+        -0.34,
+        -0.11,
+        0.719
+      ],
+      "start_position": [
+        -0.34,
+        -0.11,
+        0.715
+      ],
+      "end_position": [
+        -0.34,
+        -0.11,
+        0.723
+      ],
+      "normal": [
+        -1,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        -0.5,
+        0.5,
+        -0.5,
+        0.5
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm03.weld04",
+      "skill": "arm03.weld04",
+      "robot": "arm03",
+      "seam": "joint07",
+      "parts": [
+        "workpiece_plate_3_0",
+        "workpiece_plate_3_1"
+      ],
+      "position": [
+        -0.11,
+        -0.34,
+        0.737
+      ],
+      "start_position": [
+        -0.11,
+        -0.34,
+        0.733
+      ],
+      "end_position": [
+        -0.11,
+        -0.34,
+        0.741
+      ],
+      "normal": [
+        0,
+        -1,
+        0
+      ],
+      "quaternion_xyzw": [
+        -0.7071067811865475,
+        0.0,
+        0.0,
+        0.7071067811865476
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm03.weld05",
+      "skill": "arm03.weld05",
+      "robot": "arm03",
+      "seam": "joint06",
+      "parts": [
+        "workpiece_plate_2_1",
+        "workpiece_plate_2_2"
+      ],
+      "position": [
+        -0.34,
+        -0.11,
+        0.755
+      ],
+      "start_position": [
+        -0.34,
+        -0.11,
+        0.751
+      ],
+      "end_position": [
+        -0.34,
+        -0.11,
+        0.759
+      ],
+      "normal": [
+        -1,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        -0.5,
+        0.5,
+        -0.5,
+        0.5
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm04.weld01",
+      "skill": "arm04.weld01",
+      "robot": "arm04",
+      "seam": "joint08",
+      "parts": [
+        "workpiece_plate_3_1",
+        "workpiece_plate_3_2"
+      ],
+      "position": [
+        0.11,
+        -0.34,
+        0.6829999999999999
+      ],
+      "start_position": [
+        0.11,
+        -0.34,
+        0.6789999999999999
+      ],
+      "end_position": [
+        0.11,
+        -0.34,
+        0.6869999999999999
+      ],
+      "normal": [
+        0,
+        -1,
+        0
+      ],
+      "quaternion_xyzw": [
+        -0.7071067811865475,
+        0.0,
+        0.0,
+        0.7071067811865476
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm04.weld02",
+      "skill": "arm04.weld02",
+      "robot": "arm04",
+      "seam": "joint01",
+      "parts": [
+        "workpiece_plate_0_0",
+        "workpiece_plate_0_1"
+      ],
+      "position": [
+        0.34,
+        -0.11,
+        0.701
+      ],
+      "start_position": [
+        0.34,
+        -0.11,
+        0.697
+      ],
+      "end_position": [
+        0.34,
+        -0.11,
+        0.705
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        -0.5,
+        -0.5,
+        0.5,
+        0.5
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm04.weld03",
+      "skill": "arm04.weld03",
+      "robot": "arm04",
+      "seam": "joint08",
+      "parts": [
+        "workpiece_plate_3_1",
+        "workpiece_plate_3_2"
+      ],
+      "position": [
+        0.11,
+        -0.34,
+        0.719
+      ],
+      "start_position": [
+        0.11,
+        -0.34,
+        0.715
+      ],
+      "end_position": [
+        0.11,
+        -0.34,
+        0.723
+      ],
+      "normal": [
+        0,
+        -1,
+        0
+      ],
+      "quaternion_xyzw": [
+        -0.7071067811865475,
+        0.0,
+        0.0,
+        0.7071067811865476
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm04.weld04",
+      "skill": "arm04.weld04",
+      "robot": "arm04",
+      "seam": "joint01",
+      "parts": [
+        "workpiece_plate_0_0",
+        "workpiece_plate_0_1"
+      ],
+      "position": [
+        0.34,
+        -0.11,
+        0.737
+      ],
+      "start_position": [
+        0.34,
+        -0.11,
+        0.733
+      ],
+      "end_position": [
+        0.34,
+        -0.11,
+        0.741
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        -0.5,
+        -0.5,
+        0.5,
+        0.5
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm04.weld05",
+      "skill": "arm04.weld05",
+      "robot": "arm04",
+      "seam": "joint08",
+      "parts": [
+        "workpiece_plate_3_1",
+        "workpiece_plate_3_2"
+      ],
+      "position": [
+        0.11,
+        -0.34,
+        0.755
+      ],
+      "start_position": [
+        0.11,
+        -0.34,
+        0.751
+      ],
+      "end_position": [
+        0.11,
+        -0.34,
+        0.759
+      ],
+      "normal": [
+        0,
+        -1,
+        0
+      ],
+      "quaternion_xyzw": [
+        -0.7071067811865475,
+        0.0,
+        0.0,
+        0.7071067811865476
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm05.weld01",
+      "skill": "arm05.weld01",
+      "robot": "arm05",
+      "seam": "joint02",
+      "parts": [
+        "workpiece_plate_0_1",
+        "workpiece_plate_0_2"
+      ],
+      "position": [
+        0.34,
+        0.11,
+        0.695
+      ],
+      "start_position": [
+        0.34,
+        0.11,
+        0.691
+      ],
+      "end_position": [
+        0.34,
+        0.11,
+        0.699
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.5,
+        -0.5,
+        -0.5,
+        0.5
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm05.weld02",
+      "skill": "arm05.weld02",
+      "robot": "arm05",
+      "seam": "joint01",
+      "parts": [
+        "workpiece_plate_0_0",
+        "workpiece_plate_0_1"
+      ],
+      "position": [
+        0.34,
+        -0.11,
+        0.713
+      ],
+      "start_position": [
+        0.34,
+        -0.11,
+        0.709
+      ],
+      "end_position": [
+        0.34,
+        -0.11,
+        0.717
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.5,
+        -0.5,
+        -0.5,
+        0.5
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm05.weld03",
+      "skill": "arm05.weld03",
+      "robot": "arm05",
+      "seam": "joint02",
+      "parts": [
+        "workpiece_plate_0_1",
+        "workpiece_plate_0_2"
+      ],
+      "position": [
+        0.34,
+        0.11,
+        0.731
+      ],
+      "start_position": [
+        0.34,
+        0.11,
+        0.727
+      ],
+      "end_position": [
+        0.34,
+        0.11,
+        0.735
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.5,
+        -0.5,
+        -0.5,
+        0.5
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm05.weld04",
+      "skill": "arm05.weld04",
+      "robot": "arm05",
+      "seam": "joint01",
+      "parts": [
+        "workpiece_plate_0_0",
+        "workpiece_plate_0_1"
+      ],
+      "position": [
+        0.34,
+        -0.11,
+        0.749
+      ],
+      "start_position": [
+        0.34,
+        -0.11,
+        0.745
+      ],
+      "end_position": [
+        0.34,
+        -0.11,
+        0.753
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.5,
+        -0.5,
+        -0.5,
+        0.5
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm05.weld05",
+      "skill": "arm05.weld05",
+      "robot": "arm05",
+      "seam": "joint02",
+      "parts": [
+        "workpiece_plate_0_1",
+        "workpiece_plate_0_2"
+      ],
+      "position": [
+        0.34,
+        0.11,
+        0.767
+      ],
+      "start_position": [
+        0.34,
+        0.11,
+        0.763
+      ],
+      "end_position": [
+        0.34,
+        0.11,
+        0.771
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.5,
+        -0.5,
+        -0.5,
+        0.5
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm06.weld01",
+      "skill": "arm06.weld01",
+      "robot": "arm06",
+      "seam": "joint04",
+      "parts": [
+        "workpiece_plate_1_1",
+        "workpiece_plate_1_2"
+      ],
+      "position": [
+        -0.11,
+        0.34,
+        0.695
+      ],
+      "start_position": [
+        -0.11,
+        0.34,
+        0.691
+      ],
+      "end_position": [
+        -0.11,
+        0.34,
+        0.699
+      ],
+      "normal": [
+        0,
+        1,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.7071067811865475,
+        0.0,
+        0.0,
+        0.7071067811865476
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm06.weld02",
+      "skill": "arm06.weld02",
+      "robot": "arm06",
+      "seam": "joint03",
+      "parts": [
+        "workpiece_plate_1_0",
+        "workpiece_plate_1_1"
+      ],
+      "position": [
+        0.11,
+        0.34,
+        0.713
+      ],
+      "start_position": [
+        0.11,
+        0.34,
+        0.709
+      ],
+      "end_position": [
+        0.11,
+        0.34,
+        0.717
+      ],
+      "normal": [
+        0,
+        1,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.7071067811865475,
+        0.0,
+        0.0,
+        0.7071067811865476
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm06.weld03",
+      "skill": "arm06.weld03",
+      "robot": "arm06",
+      "seam": "joint04",
+      "parts": [
+        "workpiece_plate_1_1",
+        "workpiece_plate_1_2"
+      ],
+      "position": [
+        -0.11,
+        0.34,
+        0.731
+      ],
+      "start_position": [
+        -0.11,
+        0.34,
+        0.727
+      ],
+      "end_position": [
+        -0.11,
+        0.34,
+        0.735
+      ],
+      "normal": [
+        0,
+        1,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.7071067811865475,
+        0.0,
+        0.0,
+        0.7071067811865476
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm06.weld04",
+      "skill": "arm06.weld04",
+      "robot": "arm06",
+      "seam": "joint03",
+      "parts": [
+        "workpiece_plate_1_0",
+        "workpiece_plate_1_1"
+      ],
+      "position": [
+        0.11,
+        0.34,
+        0.749
+      ],
+      "start_position": [
+        0.11,
+        0.34,
+        0.745
+      ],
+      "end_position": [
+        0.11,
+        0.34,
+        0.753
+      ],
+      "normal": [
+        0,
+        1,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.7071067811865475,
+        0.0,
+        0.0,
+        0.7071067811865476
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm06.weld05",
+      "skill": "arm06.weld05",
+      "robot": "arm06",
+      "seam": "joint04",
+      "parts": [
+        "workpiece_plate_1_1",
+        "workpiece_plate_1_2"
+      ],
+      "position": [
+        -0.11,
+        0.34,
+        0.767
+      ],
+      "start_position": [
+        -0.11,
+        0.34,
+        0.763
+      ],
+      "end_position": [
+        -0.11,
+        0.34,
+        0.771
+      ],
+      "normal": [
+        0,
+        1,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.7071067811865475,
+        0.0,
+        0.0,
+        0.7071067811865476
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm07.weld01",
+      "skill": "arm07.weld01",
+      "robot": "arm07",
+      "seam": "joint06",
+      "parts": [
+        "workpiece_plate_2_1",
+        "workpiece_plate_2_2"
+      ],
+      "position": [
+        -0.34,
+        -0.11,
+        0.695
+      ],
+      "start_position": [
+        -0.34,
+        -0.11,
+        0.691
+      ],
+      "end_position": [
+        -0.34,
+        -0.11,
+        0.699
+      ],
+      "normal": [
+        -1,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm07.weld02",
+      "skill": "arm07.weld02",
+      "robot": "arm07",
+      "seam": "joint05",
+      "parts": [
+        "workpiece_plate_2_0",
+        "workpiece_plate_2_1"
+      ],
+      "position": [
+        -0.34,
+        0.11,
+        0.713
+      ],
+      "start_position": [
+        -0.34,
+        0.11,
+        0.709
+      ],
+      "end_position": [
+        -0.34,
+        0.11,
+        0.717
+      ],
+      "normal": [
+        -1,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm07.weld03",
+      "skill": "arm07.weld03",
+      "robot": "arm07",
+      "seam": "joint06",
+      "parts": [
+        "workpiece_plate_2_1",
+        "workpiece_plate_2_2"
+      ],
+      "position": [
+        -0.34,
+        -0.11,
+        0.731
+      ],
+      "start_position": [
+        -0.34,
+        -0.11,
+        0.727
+      ],
+      "end_position": [
+        -0.34,
+        -0.11,
+        0.735
+      ],
+      "normal": [
+        -1,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm07.weld04",
+      "skill": "arm07.weld04",
+      "robot": "arm07",
+      "seam": "joint05",
+      "parts": [
+        "workpiece_plate_2_0",
+        "workpiece_plate_2_1"
+      ],
+      "position": [
+        -0.34,
+        0.11,
+        0.749
+      ],
+      "start_position": [
+        -0.34,
+        0.11,
+        0.745
+      ],
+      "end_position": [
+        -0.34,
+        0.11,
+        0.753
+      ],
+      "normal": [
+        -1,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm07.weld05",
+      "skill": "arm07.weld05",
+      "robot": "arm07",
+      "seam": "joint06",
+      "parts": [
+        "workpiece_plate_2_1",
+        "workpiece_plate_2_2"
+      ],
+      "position": [
+        -0.34,
+        -0.11,
+        0.767
+      ],
+      "start_position": [
+        -0.34,
+        -0.11,
+        0.763
+      ],
+      "end_position": [
+        -0.34,
+        -0.11,
+        0.771
+      ],
+      "normal": [
+        -1,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm08.weld01",
+      "skill": "arm08.weld01",
+      "robot": "arm08",
+      "seam": "joint08",
+      "parts": [
+        "workpiece_plate_3_1",
+        "workpiece_plate_3_2"
+      ],
+      "position": [
+        0.11,
+        -0.34,
+        0.695
+      ],
+      "start_position": [
+        0.11,
+        -0.34,
+        0.691
+      ],
+      "end_position": [
+        0.11,
+        -0.34,
+        0.699
+      ],
+      "normal": [
+        0,
+        -1,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.7071067811865476,
+        0.7071067811865475,
+        0.0
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm08.weld02",
+      "skill": "arm08.weld02",
+      "robot": "arm08",
+      "seam": "joint07",
+      "parts": [
+        "workpiece_plate_3_0",
+        "workpiece_plate_3_1"
+      ],
+      "position": [
+        -0.11,
+        -0.34,
+        0.713
+      ],
+      "start_position": [
+        -0.11,
+        -0.34,
+        0.709
+      ],
+      "end_position": [
+        -0.11,
+        -0.34,
+        0.717
+      ],
+      "normal": [
+        0,
+        -1,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.7071067811865476,
+        0.7071067811865475,
+        0.0
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm08.weld03",
+      "skill": "arm08.weld03",
+      "robot": "arm08",
+      "seam": "joint08",
+      "parts": [
+        "workpiece_plate_3_1",
+        "workpiece_plate_3_2"
+      ],
+      "position": [
+        0.11,
+        -0.34,
+        0.731
+      ],
+      "start_position": [
+        0.11,
+        -0.34,
+        0.727
+      ],
+      "end_position": [
+        0.11,
+        -0.34,
+        0.735
+      ],
+      "normal": [
+        0,
+        -1,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.7071067811865476,
+        0.7071067811865475,
+        0.0
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm08.weld04",
+      "skill": "arm08.weld04",
+      "robot": "arm08",
+      "seam": "joint07",
+      "parts": [
+        "workpiece_plate_3_0",
+        "workpiece_plate_3_1"
+      ],
+      "position": [
+        -0.11,
+        -0.34,
+        0.749
+      ],
+      "start_position": [
+        -0.11,
+        -0.34,
+        0.745
+      ],
+      "end_position": [
+        -0.11,
+        -0.34,
+        0.753
+      ],
+      "normal": [
+        0,
+        -1,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.7071067811865476,
+        0.7071067811865475,
+        0.0
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "arm08.weld05",
+      "skill": "arm08.weld05",
+      "robot": "arm08",
+      "seam": "joint08",
+      "parts": [
+        "workpiece_plate_3_1",
+        "workpiece_plate_3_2"
+      ],
+      "position": [
+        0.11,
+        -0.34,
+        0.767
+      ],
+      "start_position": [
+        0.11,
+        -0.34,
+        0.763
+      ],
+      "end_position": [
+        0.11,
+        -0.34,
+        0.771
+      ],
+      "normal": [
+        0,
+        -1,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.7071067811865476,
+        0.7071067811865475,
+        0.0
+      ],
+      "weld_source": [
+        7,
+        8
+      ]
+    }
+  ],
+  "description": "Eight UR5 arms weld forty short beads on authored plate seams.",
+  "scenario": "workpiece-welding-v1"
+}

@@ -11,6 +11,7 @@ shared timeline. Documentation is maintained in English.
 | Plan, validate, and replay saved files | [Command-line workflow](cli.md) |
 | See a plan in a browser | [Standalone visualization](visualization.md) |
 | Run two UR5 models with meshes | [Two-UR5 walkthrough](visualization.md#two-ur5-arms) |
+| Watch eight UR5 arms weld a shared workpiece | [Eight-arm welding demo](eight-arm-demo.md) |
 | Generate and display a Pick & Place | [Single-arm manipulation](manipulation.md) |
 | Coordinate tasks and a two-arm handover | [Multi-arm manipulation](multi-arm-manipulation.md) |
 | Measure and improve a manipulation plan | [Objectives and anytime refinement](refinement.md) |

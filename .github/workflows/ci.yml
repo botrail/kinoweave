@@ -85,6 +85,7 @@ jobs:
           /tmp/kinoweave-wheel/bin/python "$GITHUB_WORKSPACE/examples/two_arm_handover.py" --refine --refinement-iterations 1 --refinement-seconds 30 --output /tmp/handover
           /tmp/kinoweave-wheel/bin/python "$GITHUB_WORKSPACE/examples/task_scheduling.py" --output /tmp/task-run
           /tmp/kinoweave-wheel/bin/python "$GITHUB_WORKSPACE/examples/many_arm_inspection.py" --robots 4 --tasks 4 --topology paired --output /tmp/many-tools
+          /tmp/kinoweave-wheel/bin/python "$GITHUB_WORKSPACE/examples/eight_ur5.py" --output /tmp/eight-ur5
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: distributions

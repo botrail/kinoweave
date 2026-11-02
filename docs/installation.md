@@ -44,7 +44,8 @@ Other platforms and Python versions are outside the supported configuration.
 | Scene authoring | Optional expanded URDF 1.0 subset, explicit planning YAML, and multi-instance scene YAML. |
 
 The initial application scope is two fixed arms, including the supplied UR5
-scene. Larger robot counts, dense industrial cells, arbitrary mesh collision,
+scene. The [eight-UR5 showcase](eight-arm-demo.md) adds an experimental fixed
+inspection cell with real link meshes. General larger fleets, dense industrial cells, arbitrary mesh collision,
 general automatic sphere fitting, MJCF/USD import, continuous task/grasp
 synthesis, mobile bases, dynamics, and physical control are outside the supported
 scope. URDF support is limited to the [documented subset](scene-authoring.md#supported-urdf-subset).

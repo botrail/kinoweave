@@ -1,0 +1,20 @@
+{
+  "format": "kinoweave.demo.weld-workpiece",
+  "schema_version": 1,
+  "center": [0.0, 0.0, 0.725],
+  "surface_offset": 0.34,
+  "panel_half_width": 0.22,
+  "panel_height": 0.14,
+  "plate_thickness": 0.012,
+  "seam_offsets": [-0.11, 0.11],
+  "frame_half_width": 0.30,
+  "frame_bottom": 0.35,
+  "frame_top": 1.10,
+  "frame_tube_width": 0.028,
+  "bead_center_offsets": [-0.036, -0.018, 0.0, 0.018, 0.036],
+  "level_offsets": [-0.006, 0.006],
+  "bead_length": 0.008,
+  "approach_distance": 0.08,
+  "tool_length": 0.18,
+  "nozzle_gap": 0.012
+}

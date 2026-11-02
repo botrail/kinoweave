@@ -10,6 +10,10 @@ universal_robot/ur_description. These external assets retain their original
 licenses and notices. The asset loader preserves supplied license and
 attribution documents in compiled visual bundles.
 
+The eight-UR5 demonstration includes compiled copies of these external visual
+assets. Original attribution and license text accompany them in
+examples/assets/eight_ur5/notices/; see examples/assets/eight_ur5/NOTICE.md.
+
 KinoWeave is an independent project inspired by cuArms and LaCAM. References
 to these research projects and to robot or simulator names do not imply
 affiliation or endorsement.

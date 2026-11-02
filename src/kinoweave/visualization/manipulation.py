@@ -25,10 +25,10 @@ class ManipulationPlaybackFrame:
 
 
 class ManipulationViewer:
-    """Collision proxies, object modes and original local trace clocks; no physics.
+    """Link meshes/proxies, object modes and original local trace clocks; no physics.
 
     Input reports are not trusted: even an imported success is rechecked on CPU
-    before a server is started. Robot meshes/simulator execution are not supplied.
+    before a server is started. Optional GLBs use the native model/link frames.
     """
 
     def __init__(
@@ -36,6 +36,7 @@ class ManipulationViewer:
         problem,
         result,
         *,
+        visuals=None,
         policy=None,
         host="127.0.0.1",
         port=8090,
@@ -54,6 +55,10 @@ class ManipulationViewer:
             raise ContractError(
                 "viewer.plan", f"CPU verification failed: {self.result.validation.issues}"
             )
+        self._visuals = visuals or {}
+        valid_links = {(m.name, link) for m in problem.scene.models for link in m.links}
+        if not set(self._visuals) <= valid_links:
+            raise ContractError("visuals", "unknown model/link binding")
         try:
             import numpy as np
             import viser
@@ -74,6 +79,8 @@ class ManipulationViewer:
             {},
             {},
         )
+        self._meshes, self._paths, self._obstacle_labels = [], [], []
+        self._obstacle_nodes = {}
         self._frame = self._evaluate(0)
         self.server = viser.ViserServer(host=host, port=port, label="KinoWeave", verbose=False)
         try:
@@ -132,12 +139,19 @@ class ManipulationViewer:
                 )
                 for link in model.links
             }
+            for link in model.links:
+                glb = self._visuals.get((model.name, link))
+                if glb is not None:
+                    self._meshes.append(
+                        scene.add_glb(f"{root}/links/{quote(link, safe='')}/visual", glb)
+                    )
             self._spheres[name] = [
                 scene.add_icosphere(
                     f"{root}/collision/{j}",
                     radius=s.radius,
                     color=color,
-                    subdivisions=2,
+                    subdivisions=1,
+                    opacity=0.45,
                     position=s.center,
                 )
                 for j, s in enumerate(fk.spheres)
@@ -156,12 +170,15 @@ class ManipulationViewer:
                 point = frame.poses[frame.link_names.index(tool)].position
                 points.append(point)
                 bounds.append(point)
-            scene.add_line_segments(
-                f"{root}/path",
-                points=np.asarray(list(zip(points[:-1], points[1:], strict=True))),
-                colors=color,
-                thickness=0.002,
+            self._paths.append(
+                scene.add_line_segments(
+                    f"{root}/path",
+                    points=np.asarray(list(zip(points[:-1], points[1:], strict=True))),
+                    colors=color,
+                    thickness=0.002,
+                )
             )
+            bounds.extend(s.center for s in fk.spheres)
         for obj in self._frame.geometry.objects:
             root = f"/objects/{quote(obj.name, safe='')}"
             self._objects[obj.name] = [
@@ -183,26 +200,29 @@ class ManipulationViewer:
                 position=obstacle.pose.position, wxyz=_wxyz(obstacle.pose), color=(130, 144, 161)
             )
             if isinstance(obstacle.shape, Box):
-                scene.add_box(root, dimensions=obstacle.shape.size, **kwargs)
+                node = scene.add_box(root, dimensions=obstacle.shape.size, **kwargs)
                 radius = math.hypot(*obstacle.shape.size) / 2
             else:
-                scene.add_icosphere(root, radius=obstacle.shape.radius, **kwargs)
+                node = scene.add_icosphere(root, radius=obstacle.shape.radius, **kwargs)
                 radius = obstacle.shape.radius
+            self._obstacle_nodes[obstacle.name] = node
             bounds.extend(
                 (
                     np.asarray(obstacle.pose.position) - radius,
                     np.asarray(obstacle.pose.position) + radius,
                 )
             )
-            scene.add_label(
-                f"{root}/name",
-                obstacle.name,
-                position=tuple(np.asarray(obstacle.pose.position) + (0, 0, 0.07)),
+            self._obstacle_labels.append(
+                scene.add_label(
+                    f"{root}/name",
+                    obstacle.name,
+                    position=(0, 0, 0.07),
+                )
             )
         bounds.extend(s.center for o in self._frame.geometry.objects for s in o.spheres)
         low, high = np.min(bounds, axis=0), np.max(bounds, axis=0)
         center, extent = (low + high) / 2, max(1.0, float(np.max(high - low)))
-        scene.add_grid(
+        self._grid = scene.add_grid(
             "/grid",
             width=extent * 2,
             height=extent * 2,
@@ -217,7 +237,7 @@ class ManipulationViewer:
 
     def _build_gui(self, autoplay):
         gui = self.server.gui
-        gui.add_markdown("## KinoWeave\nManipulation playback")
+        self._heading = gui.add_markdown("## KinoWeave\nManipulation playback")
         self.timeline = gui.add_slider(
             "Time [s]",
             min=0.0,
@@ -229,11 +249,25 @@ class ManipulationViewer:
         self.loop = gui.add_checkbox("Loop", initial_value=True)
         self.speed = gui.add_slider("Speed", min=0.25, max=4.0, step=0.25, initial_value=1.0)
         reset = gui.add_button("Reset")
+        self.show_meshes = gui.add_checkbox(
+            "Robot meshes", initial_value=True, disabled=not self._meshes
+        )
+        missing_meshes = any(
+            not any((r.model, link) in self._visuals for link in m.links)
+            for r in self.problem.scene.robots
+            for m in self.problem.scene.models
+            if m.name == r.model
+        )
+        self.show_collision = gui.add_checkbox("Collision spheres", initial_value=missing_meshes)
         self.show_axes = gui.add_checkbox("Link axes", initial_value=False)
-        self.show_skeleton = gui.add_checkbox("Link skeleton", initial_value=True)
-        gui.add_markdown(
+        self.show_skeleton = gui.add_checkbox("Link skeleton", initial_value=not self._meshes)
+        self.show_paths = gui.add_checkbox("Tool paths", initial_value=not self._meshes)
+        self.show_obstacle_names = gui.add_checkbox(
+            "Obstacle labels", initial_value=not self._meshes
+        )
+        self._verification_note = gui.add_markdown(
             "**CPU verified · sampled geometry**\n\n"
-            "Collision proxies and kinematic playback. No dynamics or contact simulation."
+            "Kinematic playback with explicit collision proxies. No dynamics or contact simulation."
         )
         self.inspector = gui.add_markdown("")
 
@@ -252,7 +286,14 @@ class ManipulationViewer:
         def _(_event):
             self.seek(0.0)
 
-        for handle in (self.show_axes, self.show_skeleton):
+        for handle in (
+            self.show_axes,
+            self.show_skeleton,
+            self.show_meshes,
+            self.show_collision,
+            self.show_paths,
+            self.show_obstacle_names,
+        ):
 
             @handle.on_update
             def _(_event):
@@ -264,6 +305,12 @@ class ManipulationViewer:
         np, frame = self._np, self._frame
         models = {m.name: m for m in self.problem.scene.models}
         with self.server.atomic():
+            for mesh in self._meshes:
+                mesh.visible = self.show_meshes.value
+            for path in self._paths:
+                path.visible = self.show_paths.value
+            for label in self._obstacle_labels:
+                label.visible = self.show_obstacle_names.value
             for name, fk in frame.geometry.robots:
                 poses = dict(zip(fk.link_names, fk.poses, strict=True))
                 for link, pose in poses.items():
@@ -272,17 +319,15 @@ class ManipulationViewer:
                     handle.show_axes = self.show_axes.value
                 for handle, sphere in zip(self._spheres[name], fk.spheres, strict=True):
                     handle.position = sphere.center
+                    handle.visible = self.show_collision.value
                 model = models[next(r.model for r in self.problem.scene.robots if r.name == name)]
                 self._skeletons[name].points = np.asarray(
                     [[poses[j.parent].position, poses[j.child].position] for j in model.joints]
                 )
                 self._skeletons[name].visible = self.show_skeleton.value
-            lines = [
-                f"**Reference time: {frame.time:.3f} s**",
-                "",
-                "| Object | Mode | Position [m] |",
-                "| --- | --- | --- |",
-            ]
+            lines = [f"**Reference time: {frame.time:.3f} s**"]
+            if frame.geometry.objects:
+                lines.extend(("", "| Object | Mode | Position [m] |", "| --- | --- | --- |"))
             for obj in frame.geometry.objects:
                 state = next(s for s in frame.mode.states if s.object == obj.name)
                 label = (

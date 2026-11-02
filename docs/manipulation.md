@@ -176,6 +176,7 @@ with ManipulationViewer(problem, result, port=8090) as viewer:
 The viewer independently revalidates the plan on CPU before opening its
 server, including imported `success` results. `viewer.seek(t)` and
 `viewer.frame` expose the evaluated time, mode, and world geometry. It displays
-collision proxies, link skeletons, obstacles, and object state. Native
-robot-mesh playback remains available through [ViserViewer](visualization.md).
+collision proxies, link skeletons, obstacles, and object state. Supply
+`visuals=load_visuals(manifest_path, problem.scene)` to add hash-checked robot
+link meshes, as in the [eight-UR5 demo](eight-arm-demo.md).
 Simulator and controller adapters remain separate optional integrations.

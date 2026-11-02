@@ -5,6 +5,8 @@ two-UR5 example. KinoWeave also includes an experimental synthetic inspection
 example for two, four or eight tools and longer task lists. This checks task
 coverage, scheduling, cache reuse and verification as the problem grows. Its
 Cartesian tool spheres do not model complete industrial arms or grasp physics.
+For a presentation with complete robot meshes, use the separate
+[eight-UR5 shared-frame demo](eight-arm-demo.md), which includes a saved plan.
 
 ## Run a larger standalone example
 

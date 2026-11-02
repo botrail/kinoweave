@@ -1,0 +1,1010 @@
+{
+  "conventions": {
+    "angle": "rad",
+    "handedness": "right",
+    "length": "m",
+    "pose_direction": "parent_from_local",
+    "quaternion_order": "xyzw",
+    "time": "s"
+  },
+  "diagnostics": [
+    {
+      "code": "manipulation_geometry_policy",
+      "message": "{\"contact_tolerance\": 1e-06, \"max_cached_fk\": 2048, \"orientation_tolerance\": 1e-06, \"position_tolerance\": 1e-06, \"support_tolerance\": 1e-06}",
+      "path": null,
+      "stage": "cpu_verification"
+    },
+    {
+      "code": "multi_arm_construction",
+      "message": "{\"algorithm\": \"lacam\", \"conflicts\": \"eager_state_tables\", \"search_config\": {\"algorithm\": \"lacam\", \"max_cached_table_pairs\": 131072, \"max_cached_tables\": 8, \"max_candidates_per_robot\": 128, \"max_constraints\": 40000, \"max_pair_bytes\": 4194304, \"max_query_pairs\": 256, \"max_skill_ticks\": 1000, \"max_state_bytes\": 67108864, \"max_state_pairs\": 65536, \"max_states\": 4000, \"max_validation_samples\": 100000, \"pair_batch_size\": 32, \"sphere_tile\": 16}, \"verification\": \"independent_cpu\"}",
+      "path": null,
+      "stage": "planning"
+    }
+  ],
+  "format": "kinoweave.manipulation.result",
+  "plan": {
+    "final_mode": {
+      "name": "search",
+      "states": []
+    },
+    "makespan": 90.0,
+    "motions": [
+      {
+        "end": 7.5,
+        "kind": "wait",
+        "start": 0.0,
+        "trace": {
+          "interpolation": "quintic_stop",
+          "times": [
+            0.0,
+            7.5
+          ],
+          "tracks": [
+            {
+              "joint_names": [
+                "shoulder_pan_joint",
+                "shoulder_lift_joint",
+                "elbow_joint",
+                "wrist_1_joint",
+                "wrist_2_joint",
+                "wrist_3_joint"
+              ],
+              "positions": [
+                [
+                  0.0,
+                  -1.9,
+                  2.1,
+                  -2.3415926535897933,
+                  -1.5707963267948966,
+                  0.0
+                ],
+                [
+                  0.0,
+                  -1.9,
+                  2.1,
+                  -2.3415926535897933,
+                  -1.5707963267948966,
+                  0.0
+                ]
+              ],
+              "robot": "arm03"
+            }
+          ]
+        }
+      },
+      {
+        "end": 7.5,
+        "kind": "wait",
+        "start": 0.0,
+        "trace": {
+          "interpolation": "quintic_stop",
+          "times": [
+            0.0,
+            7.5
+          ],
+          "tracks": [
+            {
+              "joint_names": [
+                "shoulder_pan_joint",
+                "shoulder_lift_joint",
+                "elbow_joint",
+                "wrist_1_joint",
+                "wrist_2_joint",
+                "wrist_3_joint"
+              ],
+              "positions": [
+                [
+                  0.0,
+                  -1.9,
+                  2.1,
+                  -2.3415926535897933,
+                  -1.5707963267948966,
+                  0.0
+                ],
+                [
+                  0.0,
+                  -1.9,
+                  2.1,
+                  -2.3415926535897933,
+                  -1.5707963267948966,
+                  0.0
+                ]
+              ],
+              "robot": "arm05"
+            }
+          ]
+        }
+      },
+      {
+        "end": 7.5,
+        "kind": "wait",
+        "start": 0.0,
+        "trace": {
+          "interpolation": "quintic_stop",
+          "times": [
+            0.0,
+            7.5
+          ],
+          "tracks": [
+            {
+              "joint_names": [
+                "shoulder_pan_joint",
+                "shoulder_lift_joint",
+                "elbow_joint",
+                "wrist_1_joint",
+                "wrist_2_joint",
+                "wrist_3_joint"
+              ],
+              "positions": [
+                [
+                  0.0,
+                  -1.9,
+                  2.1,
+                  -2.3415926535897933,
+                  -1.5707963267948966,
+                  0.0
+                ],
+                [
+                  0.0,
+                  -1.9,
+                  2.1,
+                  -2.3415926535897933,
+                  -1.5707963267948966,
+                  0.0
+                ]
+              ],
+              "robot": "arm06"
+            }
+          ]
+        }
+      },
+      {
+        "end": 7.5,
+        "kind": "wait",
+        "start": 0.0,
+        "trace": {
+          "interpolation": "quintic_stop",
+          "times": [
+            0.0,
+            7.5
+          ],
+          "tracks": [
+            {
+              "joint_names": [
+                "shoulder_pan_joint",
+                "shoulder_lift_joint",
+                "elbow_joint",
+                "wrist_1_joint",
+                "wrist_2_joint",
+                "wrist_3_joint"
+              ],
+              "positions": [
+                [
+                  0.0,
+                  -1.9,
+                  2.1,
+                  -2.3415926535897933,
+                  -1.5707963267948966,
+                  0.0
+                ],
+                [
+                  0.0,
+                  -1.9,
+                  2.1,
+                  -2.3415926535897933,
+                  -1.5707963267948966,
+                  0.0
+                ]
+              ],
+              "robot": "arm08"
+            }
+          ]
+        }
+      },
+      {
+        "end": 22.5,
+        "kind": "wait",
+        "start": 15.0,
+        "trace": {
+          "interpolation": "quintic_stop",
+          "times": [
+            0.0,
+            7.5
+          ],
+          "tracks": [
+            {
+              "joint_names": [
+                "shoulder_pan_joint",
+                "shoulder_lift_joint",
+                "elbow_joint",
+                "wrist_1_joint",
+                "wrist_2_joint",
+                "wrist_3_joint"
+              ],
+              "positions": [
+                [
+                  0.0,
+                  -1.9,
+                  2.1,
+                  -2.3415926535897933,
+                  -1.5707963267948966,
+                  0.0
+                ],
+                [
+                  0.0,
+                  -1.9,
+                  2.1,
+                  -2.3415926535897933,
+                  -1.5707963267948966,
+                  0.0
+                ]
+              ],
+              "robot": "arm02"
+            }
+          ]
+        }
+      },
+      {
+        "end": 30.0,
+        "kind": "wait",
+        "start": 22.5,
+        "trace": {
+          "interpolation": "quintic_stop",
+          "times": [
+            0.0,
+            7.5
+          ],
+          "tracks": [
+            {
+              "joint_names": [
+                "shoulder_pan_joint",
+                "shoulder_lift_joint",
+                "elbow_joint",
+                "wrist_1_joint",
+                "wrist_2_joint",
+                "wrist_3_joint"
+              ],
+              "positions": [
+                [
+                  0.0,
+                  -1.9,
+                  2.1,
+                  -2.3415926535897933,
+                  -1.5707963267948966,
+                  0.0
+                ],
+                [
+                  0.0,
+                  -1.9,
+                  2.1,
+                  -2.3415926535897933,
+                  -1.5707963267948966,
+                  0.0
+                ]
+              ],
+              "robot": "arm03"
+            }
+          ]
+        }
+      },
+      {
+        "end": 45.0,
+        "kind": "wait",
+        "start": 37.5,
+        "trace": {
+          "interpolation": "quintic_stop",
+          "times": [
+            0.0,
+            7.5
+          ],
+          "tracks": [
+            {
+              "joint_names": [
+                "shoulder_pan_joint",
+                "shoulder_lift_joint",
+                "elbow_joint",
+                "wrist_1_joint",
+                "wrist_2_joint",
+                "wrist_3_joint"
+              ],
+              "positions": [
+                [
+                  0.0,
+                  -1.9,
+                  2.1,
+                  -2.3415926535897933,
+                  -1.5707963267948966,
+                  0.0
+                ],
+                [
+                  0.0,
+                  -1.9,
+                  2.1,
+                  -2.3415926535897933,
+                  -1.5707963267948966,
+                  0.0
+                ]
+              ],
+              "robot": "arm06"
+            }
+          ]
+        }
+      },
+      {
+        "end": 82.5,
+        "kind": "wait",
+        "start": 75.0,
+        "trace": {
+          "interpolation": "quintic_stop",
+          "times": [
+            0.0,
+            7.5
+          ],
+          "tracks": [
+            {
+              "joint_names": [
+                "shoulder_pan_joint",
+                "shoulder_lift_joint",
+                "elbow_joint",
+                "wrist_1_joint",
+                "wrist_2_joint",
+                "wrist_3_joint"
+              ],
+              "positions": [
+                [
+                  0.0,
+                  -1.9,
+                  2.1,
+                  -2.3415926535897933,
+                  -1.5707963267948966,
+                  0.0
+                ],
+                [
+                  0.0,
+                  -1.9,
+                  2.1,
+                  -2.3415926535897933,
+                  -1.5707963267948966,
+                  0.0
+                ]
+              ],
+              "robot": "arm01"
+            }
+          ]
+        }
+      },
+      {
+        "end": 82.5,
+        "kind": "wait",
+        "start": 75.0,
+        "trace": {
+          "interpolation": "quintic_stop",
+          "times": [
+            0.0,
+            7.5
+          ],
+          "tracks": [
+            {
+              "joint_names": [
+                "shoulder_pan_joint",
+                "shoulder_lift_joint",
+                "elbow_joint",
+                "wrist_1_joint",
+                "wrist_2_joint",
+                "wrist_3_joint"
+              ],
+              "positions": [
+                [
+                  0.0,
+                  -1.9,
+                  2.1,
+                  -2.3415926535897933,
+                  -1.5707963267948966,
+                  0.0
+                ],
+                [
+                  0.0,
+                  -1.9,
+                  2.1,
+                  -2.3415926535897933,
+                  -1.5707963267948966,
+                  0.0
+                ]
+              ],
+              "robot": "arm04"
+            }
+          ]
+        }
+      },
+      {
+        "end": 82.5,
+        "kind": "wait",
+        "start": 75.0,
+        "trace": {
+          "interpolation": "quintic_stop",
+          "times": [
+            0.0,
+            7.5
+          ],
+          "tracks": [
+            {
+              "joint_names": [
+                "shoulder_pan_joint",
+                "shoulder_lift_joint",
+                "elbow_joint",
+                "wrist_1_joint",
+                "wrist_2_joint",
+                "wrist_3_joint"
+              ],
+              "positions": [
+                [
+                  0.0,
+                  -1.9,
+                  2.1,
+                  -2.3415926535897933,
+                  -1.5707963267948966,
+                  0.0
+                ],
+                [
+                  0.0,
+                  -1.9,
+                  2.1,
+                  -2.3415926535897933,
+                  -1.5707963267948966,
+                  0.0
+                ]
+              ],
+              "robot": "arm07"
+            }
+          ]
+        }
+      },
+      {
+        "end": 90.0,
+        "kind": "wait",
+        "start": 82.5,
+        "trace": {
+          "interpolation": "quintic_stop",
+          "times": [
+            0.0,
+            7.5
+          ],
+          "tracks": [
+            {
+              "joint_names": [
+                "shoulder_pan_joint",
+                "shoulder_lift_joint",
+                "elbow_joint",
+                "wrist_1_joint",
+                "wrist_2_joint",
+                "wrist_3_joint"
+              ],
+              "positions": [
+                [
+                  0.0,
+                  -1.9,
+                  2.1,
+                  -2.3415926535897933,
+                  -1.5707963267948966,
+                  0.0
+                ],
+                [
+                  0.0,
+                  -1.9,
+                  2.1,
+                  -2.3415926535897933,
+                  -1.5707963267948966,
+                  0.0
+                ]
+              ],
+              "robot": "arm01"
+            }
+          ]
+        }
+      },
+      {
+        "end": 90.0,
+        "kind": "wait",
+        "start": 82.5,
+        "trace": {
+          "interpolation": "quintic_stop",
+          "times": [
+            0.0,
+            7.5
+          ],
+          "tracks": [
+            {
+              "joint_names": [
+                "shoulder_pan_joint",
+                "shoulder_lift_joint",
+                "elbow_joint",
+                "wrist_1_joint",
+                "wrist_2_joint",
+                "wrist_3_joint"
+              ],
+              "positions": [
+                [
+                  0.0,
+                  -1.9,
+                  2.1,
+                  -2.3415926535897933,
+                  -1.5707963267948966,
+                  0.0
+                ],
+                [
+                  0.0,
+                  -1.9,
+                  2.1,
+                  -2.3415926535897933,
+                  -1.5707963267948966,
+                  0.0
+                ]
+              ],
+              "robot": "arm02"
+            }
+          ]
+        }
+      },
+      {
+        "end": 90.0,
+        "kind": "wait",
+        "start": 82.5,
+        "trace": {
+          "interpolation": "quintic_stop",
+          "times": [
+            0.0,
+            7.5
+          ],
+          "tracks": [
+            {
+              "joint_names": [
+                "shoulder_pan_joint",
+                "shoulder_lift_joint",
+                "elbow_joint",
+                "wrist_1_joint",
+                "wrist_2_joint",
+                "wrist_3_joint"
+              ],
+              "positions": [
+                [
+                  0.0,
+                  -1.9,
+                  2.1,
+                  -2.3415926535897933,
+                  -1.5707963267948966,
+                  0.0
+                ],
+                [
+                  0.0,
+                  -1.9,
+                  2.1,
+                  -2.3415926535897933,
+                  -1.5707963267948966,
+                  0.0
+                ]
+              ],
+              "robot": "arm04"
+            }
+          ]
+        }
+      },
+      {
+        "end": 90.0,
+        "kind": "wait",
+        "start": 82.5,
+        "trace": {
+          "interpolation": "quintic_stop",
+          "times": [
+            0.0,
+            7.5
+          ],
+          "tracks": [
+            {
+              "joint_names": [
+                "shoulder_pan_joint",
+                "shoulder_lift_joint",
+                "elbow_joint",
+                "wrist_1_joint",
+                "wrist_2_joint",
+                "wrist_3_joint"
+              ],
+              "positions": [
+                [
+                  0.0,
+                  -1.9,
+                  2.1,
+                  -2.3415926535897933,
+                  -1.5707963267948966,
+                  0.0
+                ],
+                [
+                  0.0,
+                  -1.9,
+                  2.1,
+                  -2.3415926535897933,
+                  -1.5707963267948966,
+                  0.0
+                ]
+              ],
+              "robot": "arm05"
+            }
+          ]
+        }
+      },
+      {
+        "end": 90.0,
+        "kind": "wait",
+        "start": 82.5,
+        "trace": {
+          "interpolation": "quintic_stop",
+          "times": [
+            0.0,
+            7.5
+          ],
+          "tracks": [
+            {
+              "joint_names": [
+                "shoulder_pan_joint",
+                "shoulder_lift_joint",
+                "elbow_joint",
+                "wrist_1_joint",
+                "wrist_2_joint",
+                "wrist_3_joint"
+              ],
+              "positions": [
+                [
+                  0.0,
+                  -1.9,
+                  2.1,
+                  -2.3415926535897933,
+                  -1.5707963267948966,
+                  0.0
+                ],
+                [
+                  0.0,
+                  -1.9,
+                  2.1,
+                  -2.3415926535897933,
+                  -1.5707963267948966,
+                  0.0
+                ]
+              ],
+              "robot": "arm07"
+            }
+          ]
+        }
+      },
+      {
+        "end": 90.0,
+        "kind": "wait",
+        "start": 82.5,
+        "trace": {
+          "interpolation": "quintic_stop",
+          "times": [
+            0.0,
+            7.5
+          ],
+          "tracks": [
+            {
+              "joint_names": [
+                "shoulder_pan_joint",
+                "shoulder_lift_joint",
+                "elbow_joint",
+                "wrist_1_joint",
+                "wrist_2_joint",
+                "wrist_3_joint"
+              ],
+              "positions": [
+                [
+                  0.0,
+                  -1.9,
+                  2.1,
+                  -2.3415926535897933,
+                  -1.5707963267948966,
+                  0.0
+                ],
+                [
+                  0.0,
+                  -1.9,
+                  2.1,
+                  -2.3415926535897933,
+                  -1.5707963267948966,
+                  0.0
+                ]
+              ],
+              "robot": "arm08"
+            }
+          ]
+        }
+      }
+    ],
+    "skills": [
+      {
+        "end": 15.0,
+        "option": "configured",
+        "skill": "arm01.weld01",
+        "start": 0.0
+      },
+      {
+        "end": 15.0,
+        "option": "configured",
+        "skill": "arm02.weld01",
+        "start": 0.0
+      },
+      {
+        "end": 15.0,
+        "option": "configured",
+        "skill": "arm04.weld01",
+        "start": 0.0
+      },
+      {
+        "end": 15.0,
+        "option": "configured",
+        "skill": "arm07.weld01",
+        "start": 0.0
+      },
+      {
+        "end": 22.5,
+        "option": "configured",
+        "skill": "arm03.weld01",
+        "start": 7.5
+      },
+      {
+        "end": 22.5,
+        "option": "configured",
+        "skill": "arm05.weld01",
+        "start": 7.5
+      },
+      {
+        "end": 22.5,
+        "option": "configured",
+        "skill": "arm06.weld01",
+        "start": 7.5
+      },
+      {
+        "end": 22.5,
+        "option": "configured",
+        "skill": "arm08.weld01",
+        "start": 7.5
+      },
+      {
+        "end": 30.0,
+        "option": "configured",
+        "skill": "arm01.weld02",
+        "start": 15.0
+      },
+      {
+        "end": 30.0,
+        "option": "configured",
+        "skill": "arm04.weld02",
+        "start": 15.0
+      },
+      {
+        "end": 30.0,
+        "option": "configured",
+        "skill": "arm07.weld02",
+        "start": 15.0
+      },
+      {
+        "end": 37.5,
+        "option": "configured",
+        "skill": "arm02.weld02",
+        "start": 22.5
+      },
+      {
+        "end": 37.5,
+        "option": "configured",
+        "skill": "arm05.weld02",
+        "start": 22.5
+      },
+      {
+        "end": 37.5,
+        "option": "configured",
+        "skill": "arm06.weld02",
+        "start": 22.5
+      },
+      {
+        "end": 37.5,
+        "option": "configured",
+        "skill": "arm08.weld02",
+        "start": 22.5
+      },
+      {
+        "end": 45.0,
+        "option": "configured",
+        "skill": "arm01.weld03",
+        "start": 30.0
+      },
+      {
+        "end": 45.0,
+        "option": "configured",
+        "skill": "arm03.weld02",
+        "start": 30.0
+      },
+      {
+        "end": 45.0,
+        "option": "configured",
+        "skill": "arm04.weld03",
+        "start": 30.0
+      },
+      {
+        "end": 45.0,
+        "option": "configured",
+        "skill": "arm07.weld03",
+        "start": 30.0
+      },
+      {
+        "end": 52.5,
+        "option": "configured",
+        "skill": "arm02.weld03",
+        "start": 37.5
+      },
+      {
+        "end": 52.5,
+        "option": "configured",
+        "skill": "arm05.weld03",
+        "start": 37.5
+      },
+      {
+        "end": 52.5,
+        "option": "configured",
+        "skill": "arm08.weld03",
+        "start": 37.5
+      },
+      {
+        "end": 60.0,
+        "option": "configured",
+        "skill": "arm01.weld04",
+        "start": 45.0
+      },
+      {
+        "end": 60.0,
+        "option": "configured",
+        "skill": "arm03.weld03",
+        "start": 45.0
+      },
+      {
+        "end": 60.0,
+        "option": "configured",
+        "skill": "arm04.weld04",
+        "start": 45.0
+      },
+      {
+        "end": 60.0,
+        "option": "configured",
+        "skill": "arm06.weld03",
+        "start": 45.0
+      },
+      {
+        "end": 60.0,
+        "option": "configured",
+        "skill": "arm07.weld04",
+        "start": 45.0
+      },
+      {
+        "end": 67.5,
+        "option": "configured",
+        "skill": "arm02.weld04",
+        "start": 52.5
+      },
+      {
+        "end": 67.5,
+        "option": "configured",
+        "skill": "arm05.weld04",
+        "start": 52.5
+      },
+      {
+        "end": 67.5,
+        "option": "configured",
+        "skill": "arm08.weld04",
+        "start": 52.5
+      },
+      {
+        "end": 75.0,
+        "option": "configured",
+        "skill": "arm01.weld05",
+        "start": 60.0
+      },
+      {
+        "end": 75.0,
+        "option": "configured",
+        "skill": "arm03.weld04",
+        "start": 60.0
+      },
+      {
+        "end": 75.0,
+        "option": "configured",
+        "skill": "arm04.weld05",
+        "start": 60.0
+      },
+      {
+        "end": 75.0,
+        "option": "configured",
+        "skill": "arm06.weld04",
+        "start": 60.0
+      },
+      {
+        "end": 75.0,
+        "option": "configured",
+        "skill": "arm07.weld05",
+        "start": 60.0
+      },
+      {
+        "end": 82.5,
+        "option": "configured",
+        "skill": "arm02.weld05",
+        "start": 67.5
+      },
+      {
+        "end": 82.5,
+        "option": "configured",
+        "skill": "arm05.weld05",
+        "start": 67.5
+      },
+      {
+        "end": 82.5,
+        "option": "configured",
+        "skill": "arm08.weld05",
+        "start": 67.5
+      },
+      {
+        "end": 90.0,
+        "option": "configured",
+        "skill": "arm03.weld05",
+        "start": 75.0
+      },
+      {
+        "end": 90.0,
+        "option": "configured",
+        "skill": "arm06.weld05",
+        "start": 75.0
+      }
+    ]
+  },
+  "provenance": {
+    "backend": {
+      "device": "cpu",
+      "name": "reference",
+      "version": "manipulation-geometry-1"
+    },
+    "config": {
+      "backend": "reference",
+      "collision_margin": 0.005,
+      "collision_tolerance": 1e-06,
+      "device": "cpu",
+      "joint_tolerance": 1e-06,
+      "seed": 7,
+      "time_limit": 1200.0,
+      "time_step": 7.5,
+      "validation_time_step": 0.05
+    },
+    "package_version": "0.1.0.dev0",
+    "problem_digest": "dcf53edda3750f4f718cd86e63ea8c6824769492cdfe4ef97d6f71f39bfb19e9"
+  },
+  "schema_version": 1,
+  "status": "success",
+  "termination_reason": "cpu_verified",
+  "validation": {
+    "checks": [
+      "collisions",
+      "contacts",
+      "endpoints",
+      "grasp_closure",
+      "joint_limits",
+      "mode_transitions",
+      "object_goals",
+      "object_support",
+      "precedence",
+      "rest_to_rest",
+      "skill_traces",
+      "structure",
+      "transition_continuity"
+    ],
+    "collision_margin": 0.005,
+    "collision_tolerance": 1e-06,
+    "issues": [],
+    "level": "sampled",
+    "sample_time_step": 0.05,
+    "status": "passed"
+  }
+}

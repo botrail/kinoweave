@@ -86,9 +86,26 @@ class ModeGeometry:
         self._problem = value_as(problem, ManipulationProblem, "problem")
         self.policy = value_as(policy or GeometryPolicy(), GeometryPolicy, "policy")
         self.models = {m.name: m for m in problem.scene.models}
+        self._allowed_links = {
+            m.name: frozenset(frozenset(pair) for pair in m.allowed_collisions)
+            for m in problem.scene.models
+        }
         self.robots = {r.name: r for r in problem.scene.robots}
         self.objects = {o.name: o for o in problem.objects}
         self.obstacles = {o.name: o for o in problem.scene.obstacles}
+        self._robot_bodies = {
+            (r.name, link): ContactBody(kind="robot", name=r.name, link=link)
+            for r in problem.scene.robots
+            for link in self.models[r.model].links
+        }
+        self._obstacle_bodies = {
+            name: ContactBody(kind="obstacle", name=name) for name in self.obstacles
+        }
+        self._axis_boxes = {
+            o.name: (o.pose.position, tuple(v / 2 for v in o.shape.size))
+            for o in problem.scene.obstacles
+            if isinstance(o.shape, Box) and o.pose.quaternion[:3] == (0.0, 0.0, 0.0)
+        }
         self.threshold = value_as(
             problem.scene.config.collision_margin + problem.scene.config.collision_tolerance,
             float,
@@ -257,9 +274,7 @@ class ModeGeometry:
                     raise ContractError("contacts", "unknown body")
         contacts = {frozenset(pair) for pair in contacts}
         spheres = [
-            GeometrySphere(
-                ContactBody(kind="robot", name=name, link=s.link), s.index, s.center, s.radius
-            )
+            GeometrySphere(self._robot_bodies[name, s.link], s.index, s.center, s.radius)
             for name, fk in robots
             for s in fk.spheres
         ]
@@ -271,9 +286,13 @@ class ModeGeometry:
                 continue
             if a.kind == b.kind == "robot" and a.name == b.name:
                 model = self.models[self.robots[a.name].model]
-                if frozenset((a.link, b.link)) in {frozenset(p) for p in model.allowed_collisions}:
+                if frozenset((a.link, b.link)) in self._allowed_links[model.name]:
                     continue
             clearance = math.dist(first.center, second.center) - first.radius - second.radius
+            # Contact exceptions only affect nonpositive clearances. Far finite
+            # pairs need no contact lookup; nonfinite arithmetic still fails closed.
+            if math.isfinite(clearance) and clearance > self.threshold:
+                continue
             if self._collision(a, b, clearance, states, contacts):
                 issues.append(
                     Diagnostic(
@@ -284,8 +303,24 @@ class ModeGeometry:
                 )
         for sphere in spheres:
             for obstacle in self.problem.scene.obstacles:
-                body = ContactBody(kind="obstacle", name=obstacle.name)
+                bounds = self._axis_boxes.get(obstacle.name)
+                if bounds is not None:
+                    center, half = bounds
+                    separation = max(
+                        abs(a - b) - h for a, b, h in zip(sphere.center, center, half, strict=True)
+                    )
+                    reach = sphere.radius + self.threshold
+                    guard = 32 * math.ulp(
+                        max(1.0, reach, *map(abs, sphere.center), *map(abs, center), *half)
+                    )
+                    # Conservative one-axis lower bound, with rounding slack.
+                    # Near pairs and all rotated boxes retain the exact test.
+                    if math.isfinite(separation) and separation > reach + guard:
+                        continue
+                body = self._obstacle_bodies[obstacle.name]
                 clearance = obstacle_clearance(sphere, obstacle)
+                if math.isfinite(clearance) and clearance > self.threshold:
+                    continue
                 if self._collision(sphere.body, body, clearance, states, contacts):
                     issues.append(
                         Diagnostic(

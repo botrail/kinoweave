@@ -13,6 +13,9 @@ sampled collision validation, and an SDK-free memory player. The optional
 cuRobo V2 backend adds CUDA geometry and tiled motion-pair checking.
 Optional Viser visualization and URDF/scene-YAML import support standalone
 browser demos, including two UR5 arms with real meshes.
+The [eight-UR5 welding showcase](docs/eight-arm-demo.md) reaches forty authored
+workpiece seam paths through IK, with robot meshes, visible waits, an unsafe
+comparison and a bundled plan for standalone playback.
 The [single-arm manipulation API](docs/manipulation.md) plans Pick & Place
 connectors around configured skills, with placed/held object geometry,
 mode-specific PRM masks, independent CPU verification, and object playback.

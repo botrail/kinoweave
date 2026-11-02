@@ -8,6 +8,8 @@ For movable objects, configured skills, and a Pick & Place demo, use the
 separate [manipulation viewer](manipulation.md#view-a-saved-manipulation-plan).
 The [two-arm handover demo](multi-arm-manipulation.md#run-the-handover-demo)
 also displays the shared object during single- and dual-holder phases.
+The [eight-UR5 demo](eight-arm-demo.md) provides mesh playback, forty task
+markers, camera presets and progress around a shared frame, with a bundled plan.
 
 Install the viewer extra, or use the source checkout's locked Python 3.12
 environment:

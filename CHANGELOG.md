@@ -2,6 +2,13 @@
 
 ## 0.1.0.dev0
 
+- Eight-UR5 workpiece welding showcase with forty surface-checked bead paths,
+  workpiece-authored positions/normals, example IK, a virtual torch TCP,
+  geometry-driven waits, an unsafe simultaneous-motion comparison, bundled
+  meshes/plan, task progress, camera presets and optional MP4 export.
+- Robot meshes and independent geometry/path/label toggles in manipulation
+  playback; reusable body/exclusion metadata and conservative axis-box culling
+  in the scalar CPU verifier.
 - Experimental two/four/eight-tool inspection cases with shared or paired
   workspaces, and named scheduling phase/first-verified timings.
 - Finite task catalogs with grounded robot/parameter alternatives, symbolic
@@ -38,6 +45,7 @@
 - Installed commands for example creation, import, planning, validation,
   playback, and browser visualization.
 
-This development release targets two fixed arms. Simulator SDK connections,
+This development release targets fixed arms, with two-arm examples and an
+experimental eight-UR5 showcase. Simulator SDK connections,
 physical execution, arbitrary mesh collision, continuous collision guarantees,
-and larger robot fleets are outside its supported scope.
+and general larger-fleet deployment are outside its supported scope.

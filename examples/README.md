@@ -24,6 +24,7 @@ corridor walls.
 | [two_arm_handover.py](two_arm_handover.py) | Coordinate two arms through Pick, an atomic bimanual Handover, and Place using prefetched conflict tables. |
 | [task_scheduling.py](task_scheduling.py) | Retry configured assignments and skill options, then improve a serial inspection schedule to parallel work. |
 | [many_arm_inspection.py](many_arm_inspection.py) | Explore experimental two/four/eight-tool inspection in shared or paired synthetic workspaces. |
+| [eight_ur5.py](eight_ur5.py) | Weld forty authored workpiece seam paths with IK, visible torch/arc geometry and coordinated starts/waits; compare unsafe execution. |
 | [reference_coordination.py](reference_coordination.py) | Search a small supplied graph with the CPU reference. |
 | [coordinated_planning.py](coordinated_planning.py) | Plan a retreat with the main planner on CPU or CUDA. |
 | [playback_plan.py](playback_plan.py) | Record kinematic playback of a saved plan. |
@@ -43,6 +44,11 @@ For a larger proxy example, run
 `python examples/many_arm_inspection.py --robots 8 --tasks 40 --topology paired --output /tmp/eight-tools`.
 Add `--view` in the visualization environment. See
 [scaling and measurement](../docs/performance.md) for the layout and evidence boundaries.
+
+For the real-model presentation, run
+`uv run --project environments/viz --frozen python examples/eight_ur5.py --output /tmp/eight-ur5 --view`.
+It includes portable link meshes and a saved plan, with fresh CPU verification.
+See the [eight-arm demo guide](../docs/eight-arm-demo.md) for video, replay and replanning.
 
 ## GPU geometry and roadmaps
 
