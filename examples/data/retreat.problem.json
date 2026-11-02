@@ -1,0 +1,31 @@
+{
+  "format": "kinoweave.problem",
+  "schema_version": 1,
+  "conventions": {
+    "length": "m", "angle": "rad", "time": "s", "handedness": "right",
+    "quaternion_order": "xyzw", "pose_direction": "parent_from_local"
+  },
+  "name": "two_cartesian_robots_retreat",
+  "models": [{
+    "name": "xy_stage",
+    "links": ["base", "x_link", "tool"],
+    "joints": [
+      {"name": "x", "kind": "prismatic", "parent": "base", "child": "x_link",
+       "axis": [1, 0, 0], "limits": {"lower": -2, "upper": 2, "velocity": 5, "acceleration": 10}},
+      {"name": "y", "kind": "prismatic", "parent": "x_link", "child": "tool",
+       "axis": [0, 1, 0], "limits": {"lower": -2, "upper": 2, "velocity": 5, "acceleration": 10}}
+    ],
+    "joint_order": ["x", "y"],
+    "collision_spheres": [{"link": "tool", "center": [0, 0, 0], "radius": 0.18}]
+  }],
+  "robots": [
+    {"name": "alpha", "model": "xy_stage", "start": [-1, 0], "goal": [1, 0]},
+    {"name": "beta", "model": "xy_stage", "start": [1, 0], "goal": [-1, 0]}
+  ],
+  "obstacles": [],
+  "config": {
+    "backend": "reference", "device": "cpu", "seed": 7,
+    "time_limit": 10, "time_step": 1, "validation_time_step": 0.1,
+    "collision_margin": 0, "collision_tolerance": 1e-9, "joint_tolerance": 1e-6
+  }
+}

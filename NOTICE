@@ -1,0 +1,15 @@
+KinoWeave
+Copyright 2026 KinoWeave contributors
+
+KinoWeave source code and documentation are licensed under the Apache License,
+Version 2.0. See LICENSE.
+
+The optional UR5 demonstration downloads robot descriptions and meshes from
+Gepetto/example-robot-data, with upstream attribution to ROS-Industrial's
+universal_robot/ur_description. These external assets retain their original
+licenses and notices. The asset loader preserves supplied license and
+attribution documents in compiled visual bundles.
+
+KinoWeave is an independent project inspired by cuArms and LaCAM. References
+to these research projects and to robot or simulator names do not imply
+affiliation or endorsement.

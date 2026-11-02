@@ -1,0 +1,54 @@
+format: kinoweave.robot
+schema_version: 1
+name: ur5
+urdf: source/robots/ur_description/urdf/ur5_robot.urdf
+packages:
+  example-robot-data: source
+joint_order:
+  - shoulder_pan_joint
+  - shoulder_lift_joint
+  - elbow_joint
+  - wrist_1_joint
+  - wrist_2_joint
+  - wrist_3_joint
+joint_limits:
+  shoulder_pan_joint: {velocity: 1.0, acceleration: 3.0}
+  shoulder_lift_joint: {velocity: 1.0, acceleration: 3.0}
+  elbow_joint: {velocity: 1.0, acceleration: 3.0}
+  wrist_1_joint: {velocity: 1.0, acceleration: 3.0}
+  wrist_2_joint: {velocity: 1.0, acceleration: 3.0}
+  wrist_3_joint: {velocity: 1.0, acceleration: 3.0}
+collision_spheres: collision_spheres.yaml
+allowed_collisions:
+  - [base_link, shoulder_link]
+  - [base_link, upper_arm_link]
+  - [shoulder_link, upper_arm_link]
+  - [upper_arm_link, forearm_link]
+  - [forearm_link, wrist_1_link]
+  - [forearm_link, wrist_2_link]
+  - [forearm_link, wrist_3_link]
+  - [wrist_1_link, wrist_2_link]
+  - [wrist_1_link, wrist_3_link]
+  - [wrist_2_link, wrist_3_link]
+  - [wrist_3_link, ee_link]
+  - [wrist_2_link, ee_link]
+  - [wrist_1_link, ee_link]
+states:
+  left:
+    shoulder_pan_joint: -0.8
+    shoulder_lift_joint: -1.4
+    elbow_joint: 1.8
+    wrist_1_joint: -1.9
+    wrist_2_joint: -1.57
+    wrist_3_joint: 0.0
+  right:
+    shoulder_pan_joint: 0.8
+    shoulder_lift_joint: -1.1
+    elbow_joint: 1.5
+    wrist_1_joint: -1.9
+    wrist_2_joint: -1.2
+    wrist_3_joint: 0.4
+notices:
+  - source/LICENSE
+  - source/robots/ur_description/README.md
+  - NOTICE.md

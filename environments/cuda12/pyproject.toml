@@ -1,0 +1,28 @@
+[project]
+name = "kinoweave-cuda12-environment"
+version = "0.0.0"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "kinoweave",
+    "nvidia-curobo[cu12]",
+    "torch==2.9.0+cu128",
+    "warp-lang==1.11.0",
+    "cuda-core[cu12]==0.7.0",
+]
+
+[dependency-groups]
+dev = ["pytest==9.2.0", "kinoweave[urdf]"]
+
+[tool.uv]
+package = false
+environments = ["sys_platform == 'linux' and platform_machine == 'x86_64'"]
+
+[tool.uv.sources]
+kinoweave = {path = "../..", editable = true}
+nvidia-curobo = {git = "https://github.com/NVlabs/curobo.git", rev = "78fd485fa82d9b9a063fb4985e371814587e666a"}
+torch = {index = "pytorch-cu128"}
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true

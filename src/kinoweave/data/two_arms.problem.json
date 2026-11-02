@@ -1,0 +1,609 @@
+{
+  "config": {
+    "backend": "reference",
+    "collision_margin": 0.0,
+    "collision_tolerance": 1e-09,
+    "device": "cpu",
+    "joint_tolerance": 1e-06,
+    "seed": 7,
+    "time_limit": 30.0,
+    "time_step": 1.0,
+    "validation_time_step": 0.1
+  },
+  "conventions": {
+    "angle": "rad",
+    "handedness": "right",
+    "length": "m",
+    "pose_direction": "parent_from_local",
+    "quaternion_order": "xyzw",
+    "time": "s"
+  },
+  "format": "kinoweave.problem",
+  "models": [
+    {
+      "allowed_collisions": [],
+      "collision_spheres": [
+        {
+          "center": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "link": "l2",
+          "radius": 0.03
+        },
+        {
+          "center": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "link": "l4",
+          "radius": 0.03
+        },
+        {
+          "center": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "link": "l7",
+          "radius": 0.03
+        }
+      ],
+      "joint_order": [
+        "j6",
+        "j5",
+        "j4",
+        "j3",
+        "j2",
+        "j1",
+        "j0"
+      ],
+      "joints": [
+        {
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "child": "l1",
+          "kind": "revolute",
+          "limits": {
+            "acceleration": 8.0,
+            "lower": -1.0,
+            "upper": 1.0,
+            "velocity": 3.0
+          },
+          "mimic": null,
+          "name": "j0",
+          "origin": {
+            "position": [
+              0.16,
+              0.0,
+              0.05
+            ],
+            "quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "parent": "l0"
+        },
+        {
+          "axis": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "child": "l2",
+          "kind": "revolute",
+          "limits": {
+            "acceleration": 8.0,
+            "lower": -1.0,
+            "upper": 1.0,
+            "velocity": 3.0
+          },
+          "mimic": null,
+          "name": "j1",
+          "origin": {
+            "position": [
+              0.16,
+              0.0,
+              0.05
+            ],
+            "quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "parent": "l1"
+        },
+        {
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "child": "l3",
+          "kind": "revolute",
+          "limits": {
+            "acceleration": 8.0,
+            "lower": -1.0,
+            "upper": 1.0,
+            "velocity": 3.0
+          },
+          "mimic": null,
+          "name": "j2",
+          "origin": {
+            "position": [
+              0.16,
+              0.0,
+              0.05
+            ],
+            "quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "parent": "l2"
+        },
+        {
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "child": "l4",
+          "kind": "revolute",
+          "limits": {
+            "acceleration": 8.0,
+            "lower": -1.0,
+            "upper": 1.0,
+            "velocity": 3.0
+          },
+          "mimic": null,
+          "name": "j3",
+          "origin": {
+            "position": [
+              0.16,
+              0.0,
+              0.05
+            ],
+            "quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "parent": "l3"
+        },
+        {
+          "axis": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "child": "l5",
+          "kind": "revolute",
+          "limits": {
+            "acceleration": 8.0,
+            "lower": -1.0,
+            "upper": 1.0,
+            "velocity": 3.0
+          },
+          "mimic": null,
+          "name": "j4",
+          "origin": {
+            "position": [
+              0.16,
+              0.0,
+              0.05
+            ],
+            "quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "parent": "l4"
+        },
+        {
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "child": "l6",
+          "kind": "revolute",
+          "limits": {
+            "acceleration": 8.0,
+            "lower": -1.0,
+            "upper": 1.0,
+            "velocity": 3.0
+          },
+          "mimic": null,
+          "name": "j5",
+          "origin": {
+            "position": [
+              0.16,
+              0.0,
+              0.05
+            ],
+            "quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "parent": "l5"
+        },
+        {
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "child": "l7",
+          "kind": "revolute",
+          "limits": {
+            "acceleration": 8.0,
+            "lower": -1.0,
+            "upper": 1.0,
+            "velocity": 3.0
+          },
+          "mimic": null,
+          "name": "j6",
+          "origin": {
+            "position": [
+              0.16,
+              0.0,
+              0.05
+            ],
+            "quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "parent": "l6"
+        }
+      ],
+      "links": [
+        "l0",
+        "l1",
+        "l2",
+        "l3",
+        "l4",
+        "l5",
+        "l6",
+        "l7"
+      ],
+      "name": "seven",
+      "revision": "1"
+    },
+    {
+      "allowed_collisions": [],
+      "collision_spheres": [
+        {
+          "center": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "link": "l2",
+          "radius": 0.03
+        },
+        {
+          "center": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "link": "l4",
+          "radius": 0.03
+        },
+        {
+          "center": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "link": "l6",
+          "radius": 0.03
+        }
+      ],
+      "joint_order": [
+        "j5",
+        "j4",
+        "j3",
+        "j2",
+        "j1",
+        "j0"
+      ],
+      "joints": [
+        {
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "child": "l1",
+          "kind": "revolute",
+          "limits": {
+            "acceleration": 8.0,
+            "lower": -1.0,
+            "upper": 1.0,
+            "velocity": 3.0
+          },
+          "mimic": null,
+          "name": "j0",
+          "origin": {
+            "position": [
+              0.16,
+              0.0,
+              0.05
+            ],
+            "quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "parent": "l0"
+        },
+        {
+          "axis": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "child": "l2",
+          "kind": "revolute",
+          "limits": {
+            "acceleration": 8.0,
+            "lower": -1.0,
+            "upper": 1.0,
+            "velocity": 3.0
+          },
+          "mimic": null,
+          "name": "j1",
+          "origin": {
+            "position": [
+              0.16,
+              0.0,
+              0.05
+            ],
+            "quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "parent": "l1"
+        },
+        {
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "child": "l3",
+          "kind": "revolute",
+          "limits": {
+            "acceleration": 8.0,
+            "lower": -1.0,
+            "upper": 1.0,
+            "velocity": 3.0
+          },
+          "mimic": null,
+          "name": "j2",
+          "origin": {
+            "position": [
+              0.16,
+              0.0,
+              0.05
+            ],
+            "quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "parent": "l2"
+        },
+        {
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "child": "l4",
+          "kind": "revolute",
+          "limits": {
+            "acceleration": 8.0,
+            "lower": -1.0,
+            "upper": 1.0,
+            "velocity": 3.0
+          },
+          "mimic": null,
+          "name": "j3",
+          "origin": {
+            "position": [
+              0.16,
+              0.0,
+              0.05
+            ],
+            "quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "parent": "l3"
+        },
+        {
+          "axis": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "child": "l5",
+          "kind": "revolute",
+          "limits": {
+            "acceleration": 8.0,
+            "lower": -1.0,
+            "upper": 1.0,
+            "velocity": 3.0
+          },
+          "mimic": null,
+          "name": "j4",
+          "origin": {
+            "position": [
+              0.16,
+              0.0,
+              0.05
+            ],
+            "quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "parent": "l4"
+        },
+        {
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "child": "l6",
+          "kind": "revolute",
+          "limits": {
+            "acceleration": 8.0,
+            "lower": -1.0,
+            "upper": 1.0,
+            "velocity": 3.0
+          },
+          "mimic": null,
+          "name": "j5",
+          "origin": {
+            "position": [
+              0.16,
+              0.0,
+              0.05
+            ],
+            "quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "parent": "l5"
+        }
+      ],
+      "links": [
+        "l0",
+        "l1",
+        "l2",
+        "l3",
+        "l4",
+        "l5",
+        "l6"
+      ],
+      "name": "six",
+      "revision": "1"
+    }
+  ],
+  "name": "two-independent-arms",
+  "obstacles": [],
+  "robots": [
+    {
+      "base_pose": {
+        "position": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "quaternion": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "goal": [
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "model": "seven",
+      "name": "alpha",
+      "start": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "base_pose": {
+        "position": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "quaternion": [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ]
+      },
+      "goal": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model": "six",
+      "name": "beta",
+      "start": [
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ]
+    }
+  ],
+  "scene_revision": "1",
+  "schema_version": 1
+}

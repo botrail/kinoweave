@@ -1,0 +1,78 @@
+{
+  "repository": "Gepetto/example-robot-data",
+  "commit": "6249cab1cdffa4fadb9a53dda964a50d79c5eaaf",
+  "files": [
+    {
+      "path": "LICENSE",
+      "git_sha1": "ce2748031bed38dc1d8016baf68e7c69248d4044"
+    },
+    {
+      "path": "robots/ur_description/README.md",
+      "git_sha1": "b10fec8bdc3dff908b85e7e33e8d895b0e6f900b"
+    },
+    {
+      "path": "robots/ur_description/meshes/ur5/collision/base.stl",
+      "git_sha1": "4eb2f7eb38493e36b16587650cd65c516ea27766"
+    },
+    {
+      "path": "robots/ur_description/meshes/ur5/collision/forearm.stl",
+      "git_sha1": "ffbed4536ef7c23c7691736124e161a226546bb9"
+    },
+    {
+      "path": "robots/ur_description/meshes/ur5/collision/shoulder.stl",
+      "git_sha1": "5088831c10deb4656b129feee4bd533824e7c152"
+    },
+    {
+      "path": "robots/ur_description/meshes/ur5/collision/upperarm.stl",
+      "git_sha1": "734386e871f9114d9be2567a68c66179ea8f16b5"
+    },
+    {
+      "path": "robots/ur_description/meshes/ur5/collision/wrist1.stl",
+      "git_sha1": "a960c0c571ba7366ed2a72e94ee733bcaf034485"
+    },
+    {
+      "path": "robots/ur_description/meshes/ur5/collision/wrist2.stl",
+      "git_sha1": "9b089de4c6077cc743130865040b934248cc5b4d"
+    },
+    {
+      "path": "robots/ur_description/meshes/ur5/collision/wrist3.stl",
+      "git_sha1": "96c71f0413dfe4311bd253a8747824f29982aed4"
+    },
+    {
+      "path": "robots/ur_description/meshes/ur5/visual/base.dae",
+      "git_sha1": "7723588fbe45b75886ba74014ba490a600425da6"
+    },
+    {
+      "path": "robots/ur_description/meshes/ur5/visual/forearm.dae",
+      "git_sha1": "aabb4a231e5677d3d021ce2ecd801c55422c21f0"
+    },
+    {
+      "path": "robots/ur_description/meshes/ur5/visual/shoulder.dae",
+      "git_sha1": "db966c69b35a184178f03d0c506b1f1eb4732b43"
+    },
+    {
+      "path": "robots/ur_description/meshes/ur5/visual/upperarm.dae",
+      "git_sha1": "2522ef1ab6a6724dd34e00d3135b64a2909685e5"
+    },
+    {
+      "path": "robots/ur_description/meshes/ur5/visual/wrist1.dae",
+      "git_sha1": "dd9125c450f36b8ce210c2a40715fe75a027d1a7"
+    },
+    {
+      "path": "robots/ur_description/meshes/ur5/visual/wrist2.dae",
+      "git_sha1": "9ee8b014e231aa86db065bcc539c5c77e222c846"
+    },
+    {
+      "path": "robots/ur_description/meshes/ur5/visual/wrist3.dae",
+      "git_sha1": "155b811516d88f3a26836728f5340c1fdbd80426"
+    },
+    {
+      "path": "robots/ur_description/srdf/ur5.srdf",
+      "git_sha1": "b1df2d1caaede8916ecf5e268f1407875c002fe5"
+    },
+    {
+      "path": "robots/ur_description/urdf/ur5_robot.urdf",
+      "git_sha1": "917a20310a86275eaee74be712f345ddeb4a7ee0"
+    }
+  ]
+}

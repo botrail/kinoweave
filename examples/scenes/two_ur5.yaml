@@ -1,0 +1,31 @@
+format: kinoweave.scene
+schema_version: 1
+name: two-ur5-coordination
+robots:
+  - name: alpha
+    asset: ../assets/ur5/robot.yaml
+    base_pose:
+      position: [-0.57, 0.0, 0.0]
+      quaternion_xyzw: [0.0, 0.0, 0.0, 1.0]
+    start: left
+    goal: right
+  - name: beta
+    asset: ../assets/ur5/robot.yaml
+    base_pose:
+      position: [0.57, 0.0, 0.0]
+      quaternion_xyzw: [0.0, 0.0, 1.0, 0.0]
+    start: left
+    goal: right
+obstacles:
+  - name: table
+    shape: {kind: box, size: [2.4, 1.6, 0.1]}
+    pose:
+      position: [0.0, 0.0, -0.15]
+config:
+  backend: reference
+  device: cpu
+  time_step: 1.0
+  validation_time_step: 0.05
+  collision_margin: 0.005
+  collision_tolerance: 0.000001
+  time_limit: 60.0

@@ -1,0 +1,62 @@
+{
+  "format": "kinoweave.problem",
+  "schema_version": 1,
+  "conventions": {
+    "length": "m",
+    "angle": "rad",
+    "time": "s",
+    "handedness": "right",
+    "quaternion_order": "xyzw",
+    "pose_direction": "parent_from_local"
+  },
+  "name": "two_sliders_contract_example",
+  "models": [
+    {
+      "name": "slider",
+      "links": ["base", "carriage"],
+      "joints": [
+        {
+          "name": "slide",
+          "kind": "prismatic",
+          "parent": "base",
+          "child": "carriage",
+          "axis": [1, 0, 0],
+          "limits": {
+            "lower": -1,
+            "upper": 1,
+            "velocity": 0.5,
+            "acceleration": 1
+          }
+        }
+      ],
+      "joint_order": ["slide"],
+      "collision_spheres": [
+        {"link": "carriage", "center": [0, 0, 0], "radius": 0.05}
+      ]
+    }
+  ],
+  "robots": [
+    {
+      "name": "left",
+      "model": "slider",
+      "start": [0],
+      "goal": [0.3],
+      "base_pose": {"position": [-0.3, -0.2, 0.5]}
+    },
+    {
+      "name": "right",
+      "model": "slider",
+      "start": [0],
+      "goal": [-0.3],
+      "base_pose": {"position": [0.3, 0.2, 0.5]}
+    }
+  ],
+  "obstacles": [
+    {
+      "name": "table",
+      "shape": {"kind": "box", "size": [0.6, 0.4, 0.1]},
+      "pose": {"position": [0, 0, 0.05]}
+    }
+  ],
+  "config": {"backend": "reference", "device": "cpu", "seed": 7}
+}

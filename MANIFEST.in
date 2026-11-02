@@ -1,0 +1,15 @@
+include uv.lock
+include CHANGELOG.md
+include LICENSE
+include NOTICE
+include .github/actionlint.yaml
+include environments/cuda12/pyproject.toml
+include environments/cuda12/uv.lock
+include environments/viz/pyproject.toml
+include environments/viz/uv.lock
+recursive-include docs *.md
+recursive-include examples *.py *.json *.yaml *.md
+prune examples/assets/ur5/source
+recursive-include tests *.py
+recursive-include .github/workflows *.yml
+prune .internal
