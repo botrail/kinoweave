@@ -1,0 +1,876 @@
+{
+  "conventions": {
+    "angle": "rad",
+    "handedness": "right",
+    "length": "m",
+    "pose_direction": "parent_from_local",
+    "quaternion_order": "xyzw",
+    "time": "s"
+  },
+  "cost": {
+    "completion": 0.0,
+    "distance": 0.0,
+    "distance_metric": "joint_l1",
+    "makespan": 1.0
+  },
+  "format": "kinoweave.manipulation.problem",
+  "goal_mode": {
+    "name": "goal",
+    "states": [
+      {
+        "kind": "placed",
+        "object": "part",
+        "pose": {
+          "position": [
+            0.3,
+            0.0,
+            0.0
+          ],
+          "quaternion": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "support": null
+      }
+    ]
+  },
+  "initial_mode": {
+    "name": "initial",
+    "states": [
+      {
+        "kind": "placed",
+        "object": "part",
+        "pose": {
+          "position": [
+            -0.5,
+            0.0,
+            0.0
+          ],
+          "quaternion": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "support": null
+      }
+    ]
+  },
+  "objects": [
+    {
+      "name": "part",
+      "revision": "1",
+      "spheres": [
+        {
+          "center": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "radius": 0.02
+        }
+      ]
+    }
+  ],
+  "scene": {
+    "config": {
+      "backend": "reference",
+      "collision_margin": 0.01,
+      "collision_tolerance": 1e-06,
+      "device": "cpu",
+      "joint_tolerance": 1e-06,
+      "seed": 0,
+      "time_limit": 10.0,
+      "time_step": 0.25,
+      "validation_time_step": 0.01
+    },
+    "conventions": {
+      "angle": "rad",
+      "handedness": "right",
+      "length": "m",
+      "pose_direction": "parent_from_local",
+      "quaternion_order": "xyzw",
+      "time": "s"
+    },
+    "format": "kinoweave.problem",
+    "models": [
+      {
+        "allowed_collisions": [],
+        "collision_spheres": [
+          {
+            "center": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "link": "tool",
+            "radius": 0.04
+          }
+        ],
+        "joint_order": [
+          "slide"
+        ],
+        "joints": [
+          {
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "child": "tool",
+            "kind": "prismatic",
+            "limits": {
+              "acceleration": 2.0,
+              "lower": -1.0,
+              "upper": 1.0,
+              "velocity": 1.0
+            },
+            "mimic": null,
+            "name": "slide",
+            "origin": {
+              "position": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "quaternion": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            "parent": "base"
+          }
+        ],
+        "links": [
+          "base",
+          "tool"
+        ],
+        "name": "rail_arm",
+        "revision": "1"
+      }
+    ],
+    "name": "symbolic_two_arm_transfer",
+    "obstacles": [],
+    "robots": [
+      {
+        "base_pose": {
+          "position": [
+            -0.5,
+            0.0,
+            0.0
+          ],
+          "quaternion": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "goal": [
+          0.0
+        ],
+        "model": "rail_arm",
+        "name": "alpha",
+        "start": [
+          0.0
+        ]
+      },
+      {
+        "base_pose": {
+          "position": [
+            0.5,
+            0.0,
+            0.0
+          ],
+          "quaternion": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "goal": [
+          0.0
+        ],
+        "model": "rail_arm",
+        "name": "beta",
+        "start": [
+          0.0
+        ]
+      }
+    ],
+    "scene_revision": "1",
+    "schema_version": 1
+  },
+  "schema_version": 1,
+  "skeleton": {
+    "precedence": [
+      {
+        "after": "carry_alpha",
+        "before": "pick_alpha"
+      },
+      {
+        "after": "handover",
+        "before": "carry_alpha"
+      },
+      {
+        "after": "carry_beta",
+        "before": "handover"
+      },
+      {
+        "after": "place_beta",
+        "before": "carry_beta"
+      }
+    ],
+    "skills": [
+      {
+        "kind": "pick",
+        "minimum_duration": 0.5,
+        "name": "pick_alpha",
+        "options": [
+          {
+            "contacts": [
+              {
+                "end": 0.5,
+                "first": {
+                  "kind": "robot",
+                  "link": "tool",
+                  "name": "alpha"
+                },
+                "second": {
+                  "kind": "object",
+                  "link": null,
+                  "name": "part"
+                },
+                "start": 0.0
+              }
+            ],
+            "name": "default",
+            "preconditions": [
+              {
+                "kind": "placed",
+                "object": "part",
+                "pose": {
+                  "position": [
+                    -0.5,
+                    0.0,
+                    0.0
+                  ],
+                  "quaternion": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                },
+                "support": null
+              }
+            ],
+            "trace": {
+              "interpolation": "linear",
+              "times": [
+                0.0,
+                0.5
+              ],
+              "tracks": [
+                {
+                  "joint_names": [
+                    "slide"
+                  ],
+                  "positions": [
+                    [
+                      0.0
+                    ],
+                    [
+                      0.0
+                    ]
+                  ],
+                  "robot": "alpha"
+                }
+              ]
+            },
+            "transitions": [
+              {
+                "after": {
+                  "grasps": [
+                    {
+                      "link": "tool",
+                      "pose": {
+                        "position": [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        "quaternion": [
+                          0.0,
+                          0.0,
+                          0.0,
+                          1.0
+                        ]
+                      },
+                      "robot": "alpha"
+                    }
+                  ],
+                  "kind": "held",
+                  "object": "part"
+                },
+                "before": {
+                  "kind": "placed",
+                  "object": "part",
+                  "pose": {
+                    "position": [
+                      -0.5,
+                      0.0,
+                      0.0
+                    ],
+                    "quaternion": [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  },
+                  "support": null
+                },
+                "time": 0.25
+              }
+            ]
+          }
+        ],
+        "robots": [
+          "alpha"
+        ],
+        "timing": "fixed"
+      },
+      {
+        "kind": "carry",
+        "minimum_duration": 0.5,
+        "name": "carry_alpha",
+        "options": [
+          {
+            "contacts": [
+              {
+                "end": 0.5,
+                "first": {
+                  "kind": "robot",
+                  "link": "tool",
+                  "name": "alpha"
+                },
+                "second": {
+                  "kind": "object",
+                  "link": null,
+                  "name": "part"
+                },
+                "start": 0.0
+              }
+            ],
+            "name": "default",
+            "preconditions": [
+              {
+                "grasps": [
+                  {
+                    "link": "tool",
+                    "pose": {
+                      "position": [
+                        0.0,
+                        0.0,
+                        0.0
+                      ],
+                      "quaternion": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                      ]
+                    },
+                    "robot": "alpha"
+                  }
+                ],
+                "kind": "held",
+                "object": "part"
+              }
+            ],
+            "trace": {
+              "interpolation": "linear",
+              "times": [
+                0.0,
+                0.5
+              ],
+              "tracks": [
+                {
+                  "joint_names": [
+                    "slide"
+                  ],
+                  "positions": [
+                    [
+                      0.0
+                    ],
+                    [
+                      0.4
+                    ]
+                  ],
+                  "robot": "alpha"
+                }
+              ]
+            },
+            "transitions": []
+          }
+        ],
+        "robots": [
+          "alpha"
+        ],
+        "timing": "fixed"
+      },
+      {
+        "kind": "handover",
+        "minimum_duration": 0.5,
+        "name": "handover",
+        "options": [
+          {
+            "contacts": [
+              {
+                "end": 0.5,
+                "first": {
+                  "kind": "robot",
+                  "link": "tool",
+                  "name": "alpha"
+                },
+                "second": {
+                  "kind": "object",
+                  "link": null,
+                  "name": "part"
+                },
+                "start": 0.0
+              },
+              {
+                "end": 0.5,
+                "first": {
+                  "kind": "robot",
+                  "link": "tool",
+                  "name": "beta"
+                },
+                "second": {
+                  "kind": "object",
+                  "link": null,
+                  "name": "part"
+                },
+                "start": 0.0
+              }
+            ],
+            "name": "default",
+            "preconditions": [
+              {
+                "grasps": [
+                  {
+                    "link": "tool",
+                    "pose": {
+                      "position": [
+                        0.0,
+                        0.0,
+                        0.0
+                      ],
+                      "quaternion": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                      ]
+                    },
+                    "robot": "alpha"
+                  }
+                ],
+                "kind": "held",
+                "object": "part"
+              }
+            ],
+            "trace": {
+              "interpolation": "linear",
+              "times": [
+                0.0,
+                0.5
+              ],
+              "tracks": [
+                {
+                  "joint_names": [
+                    "slide"
+                  ],
+                  "positions": [
+                    [
+                      0.4
+                    ],
+                    [
+                      0.4
+                    ]
+                  ],
+                  "robot": "alpha"
+                },
+                {
+                  "joint_names": [
+                    "slide"
+                  ],
+                  "positions": [
+                    [
+                      -0.4
+                    ],
+                    [
+                      -0.4
+                    ]
+                  ],
+                  "robot": "beta"
+                }
+              ]
+            },
+            "transitions": [
+              {
+                "after": {
+                  "grasps": [
+                    {
+                      "link": "tool",
+                      "pose": {
+                        "position": [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        "quaternion": [
+                          0.0,
+                          0.0,
+                          0.0,
+                          1.0
+                        ]
+                      },
+                      "robot": "alpha"
+                    },
+                    {
+                      "link": "tool",
+                      "pose": {
+                        "position": [
+                          -0.2,
+                          0.0,
+                          0.0
+                        ],
+                        "quaternion": [
+                          0.0,
+                          0.0,
+                          0.0,
+                          1.0
+                        ]
+                      },
+                      "robot": "beta"
+                    }
+                  ],
+                  "kind": "held",
+                  "object": "part"
+                },
+                "before": {
+                  "grasps": [
+                    {
+                      "link": "tool",
+                      "pose": {
+                        "position": [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        "quaternion": [
+                          0.0,
+                          0.0,
+                          0.0,
+                          1.0
+                        ]
+                      },
+                      "robot": "alpha"
+                    }
+                  ],
+                  "kind": "held",
+                  "object": "part"
+                },
+                "time": 0.25
+              },
+              {
+                "after": {
+                  "grasps": [
+                    {
+                      "link": "tool",
+                      "pose": {
+                        "position": [
+                          -0.2,
+                          0.0,
+                          0.0
+                        ],
+                        "quaternion": [
+                          0.0,
+                          0.0,
+                          0.0,
+                          1.0
+                        ]
+                      },
+                      "robot": "beta"
+                    }
+                  ],
+                  "kind": "held",
+                  "object": "part"
+                },
+                "before": {
+                  "grasps": [
+                    {
+                      "link": "tool",
+                      "pose": {
+                        "position": [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        "quaternion": [
+                          0.0,
+                          0.0,
+                          0.0,
+                          1.0
+                        ]
+                      },
+                      "robot": "alpha"
+                    },
+                    {
+                      "link": "tool",
+                      "pose": {
+                        "position": [
+                          -0.2,
+                          0.0,
+                          0.0
+                        ],
+                        "quaternion": [
+                          0.0,
+                          0.0,
+                          0.0,
+                          1.0
+                        ]
+                      },
+                      "robot": "beta"
+                    }
+                  ],
+                  "kind": "held",
+                  "object": "part"
+                },
+                "time": 0.5
+              }
+            ]
+          }
+        ],
+        "robots": [
+          "alpha",
+          "beta"
+        ],
+        "timing": "fixed"
+      },
+      {
+        "kind": "carry",
+        "minimum_duration": 0.5,
+        "name": "carry_beta",
+        "options": [
+          {
+            "contacts": [
+              {
+                "end": 0.5,
+                "first": {
+                  "kind": "robot",
+                  "link": "tool",
+                  "name": "beta"
+                },
+                "second": {
+                  "kind": "object",
+                  "link": null,
+                  "name": "part"
+                },
+                "start": 0.0
+              }
+            ],
+            "name": "default",
+            "preconditions": [
+              {
+                "grasps": [
+                  {
+                    "link": "tool",
+                    "pose": {
+                      "position": [
+                        -0.2,
+                        0.0,
+                        0.0
+                      ],
+                      "quaternion": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                      ]
+                    },
+                    "robot": "beta"
+                  }
+                ],
+                "kind": "held",
+                "object": "part"
+              }
+            ],
+            "trace": {
+              "interpolation": "linear",
+              "times": [
+                0.0,
+                0.5
+              ],
+              "tracks": [
+                {
+                  "joint_names": [
+                    "slide"
+                  ],
+                  "positions": [
+                    [
+                      -0.4
+                    ],
+                    [
+                      0.0
+                    ]
+                  ],
+                  "robot": "beta"
+                }
+              ]
+            },
+            "transitions": []
+          }
+        ],
+        "robots": [
+          "beta"
+        ],
+        "timing": "fixed"
+      },
+      {
+        "kind": "place",
+        "minimum_duration": 0.5,
+        "name": "place_beta",
+        "options": [
+          {
+            "contacts": [
+              {
+                "end": 0.5,
+                "first": {
+                  "kind": "robot",
+                  "link": "tool",
+                  "name": "beta"
+                },
+                "second": {
+                  "kind": "object",
+                  "link": null,
+                  "name": "part"
+                },
+                "start": 0.0
+              }
+            ],
+            "name": "default",
+            "preconditions": [
+              {
+                "grasps": [
+                  {
+                    "link": "tool",
+                    "pose": {
+                      "position": [
+                        -0.2,
+                        0.0,
+                        0.0
+                      ],
+                      "quaternion": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                      ]
+                    },
+                    "robot": "beta"
+                  }
+                ],
+                "kind": "held",
+                "object": "part"
+              }
+            ],
+            "trace": {
+              "interpolation": "linear",
+              "times": [
+                0.0,
+                0.5
+              ],
+              "tracks": [
+                {
+                  "joint_names": [
+                    "slide"
+                  ],
+                  "positions": [
+                    [
+                      0.0
+                    ],
+                    [
+                      0.0
+                    ]
+                  ],
+                  "robot": "beta"
+                }
+              ]
+            },
+            "transitions": [
+              {
+                "after": {
+                  "kind": "placed",
+                  "object": "part",
+                  "pose": {
+                    "position": [
+                      0.3,
+                      0.0,
+                      0.0
+                    ],
+                    "quaternion": [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  },
+                  "support": null
+                },
+                "before": {
+                  "grasps": [
+                    {
+                      "link": "tool",
+                      "pose": {
+                        "position": [
+                          -0.2,
+                          0.0,
+                          0.0
+                        ],
+                        "quaternion": [
+                          0.0,
+                          0.0,
+                          0.0,
+                          1.0
+                        ]
+                      },
+                      "robot": "beta"
+                    }
+                  ],
+                  "kind": "held",
+                  "object": "part"
+                },
+                "time": 0.25
+              }
+            ]
+          }
+        ],
+        "robots": [
+          "beta"
+        ],
+        "timing": "fixed"
+      }
+    ]
+  }
+}

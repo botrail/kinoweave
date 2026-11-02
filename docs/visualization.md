@@ -4,6 +4,11 @@ KinoWeave displays saved plans in a browser using Viser. All robots share
 the native memory player's original trajectory clock, including waits and
 retreats. No simulator or GPU is needed for viewing.
 
+For movable objects, configured skills, and a Pick & Place demo, use the
+separate [manipulation viewer](manipulation.md#view-a-saved-manipulation-plan).
+The [two-arm handover demo](multi-arm-manipulation.md#run-the-handover-demo)
+also displays the shared object during single- and dual-holder phases.
+
 Install the viewer extra, or use the source checkout's locked Python 3.12
 environment:
 

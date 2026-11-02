@@ -9,15 +9,34 @@ from pathlib import Path
 from typing import TypeVar, overload
 
 from ._contracts import ContractError, value_as
+from .manipulation import ManipulationProblem, ManipulationResult, TaskDomain
 from .models import PlanningProblem
 from .results import ExecutionReport, PlanResult
 
-Document = PlanningProblem | PlanResult | ExecutionReport
-T = TypeVar("T", PlanningProblem, PlanResult, ExecutionReport)
+Document = (
+    PlanningProblem
+    | PlanResult
+    | ExecutionReport
+    | ManipulationProblem
+    | ManipulationResult
+    | TaskDomain
+)
+T = TypeVar(
+    "T",
+    PlanningProblem,
+    PlanResult,
+    ExecutionReport,
+    ManipulationProblem,
+    ManipulationResult,
+    TaskDomain,
+)
 _FORMATS = {
     "kinoweave.problem": PlanningProblem,
     "kinoweave.result": PlanResult,
     "kinoweave.execution": ExecutionReport,
+    "kinoweave.manipulation.problem": ManipulationProblem,
+    "kinoweave.manipulation.result": ManipulationResult,
+    "kinoweave.manipulation.tasks": TaskDomain,
 }
 
 
@@ -32,7 +51,7 @@ def _plain(value):
 def dumps(document: Document) -> str:
     """Encode a validated document as deterministic UTF-8-compatible JSON."""
     if type(document) not in _FORMATS.values():
-        raise TypeError("expected a PlanningProblem, PlanResult, or ExecutionReport")
+        raise TypeError("expected a supported KinoWeave document")
     return json.dumps(
         _plain(document), ensure_ascii=False, allow_nan=False, sort_keys=True, indent=2
     )
@@ -105,7 +124,7 @@ def load(path: str | Path, *, expected: type[T] | None = None) -> T | Document:
 def document_digest(document: Document) -> str:
     """SHA-256 of the canonical semantic fields, independent of JSON whitespace."""
     if type(document) not in _FORMATS.values():
-        raise TypeError("expected a PlanningProblem, PlanResult, or ExecutionReport")
+        raise TypeError("expected a supported KinoWeave document")
     canonical = json.dumps(
         _plain(document),
         ensure_ascii=False,

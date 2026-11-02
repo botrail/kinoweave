@@ -152,3 +152,145 @@ def result(problem: PlanningProblem) -> PlanResult:
             collision_tolerance=problem.config.collision_tolerance,
         ),
     )
+
+
+@pytest.fixture
+def refinement_cases():
+    def build(*, cooperative=False, metric="joint_l1", weights=(1, 0, 0), backend="reference"):
+        from kinoweave import (
+            Joint,
+            JointLimits,
+            LinkSphere,
+            PlannerConfig,
+            RobotInstance,
+            RobotModel,
+        )
+        from kinoweave.manipulation import (
+            JointTrace,
+            ManipulationCost,
+            ManipulationMode,
+            ManipulationPlan,
+            ManipulationProblem,
+            ManipulationResult,
+            ScheduledMotion,
+            ScheduledSkill,
+            ScheduleSkeleton,
+            Skill,
+            SkillOption,
+            verify_manipulation,
+        )
+
+        model = RobotModel(
+            name="xy",
+            links=("base", "carriage", "tool"),
+            joint_order=("x", "y"),
+            joints=tuple(
+                Joint(
+                    name=name,
+                    kind="prismatic",
+                    parent=parent,
+                    child=child,
+                    axis=axis,
+                    limits=JointLimits(lower=-4, upper=4, velocity=10, acceleration=30),
+                )
+                for name, parent, child, axis in (
+                    ("x", "base", "carriage", (1, 0, 0)),
+                    ("y", "carriage", "tool", (0, 1, 0)),
+                )
+            ),
+            collision_spheres=(LinkSphere(link="tool", center=(0, 0, 0), radius=0.1),),
+        )
+        rows = (
+            (
+                (((-1, 0), (-2, 1), (0, 2), (2, 1), (1, 0)), (0, 1, 2, 3, 4)),
+                (((-1, 2), (0, 0), (1, 2)), (0, 2, 4)),
+            )
+            if cooperative
+            else ((((-1, 0), (0, 1), (1, 0)), (0, 2, 4)), (((-1, 3), (0, 4), (1, 3)), (0, 2, 4)))
+        )
+        robots = tuple(
+            RobotInstance(name=name, model=model.name, start=q[0], goal=q[-1])
+            for name, (q, _) in zip(("alpha", "beta"), rows, strict=True)
+        )
+        scene = PlanningProblem(
+            name="shortcut_case",
+            models=(model,),
+            robots=robots,
+            config=PlannerConfig(
+                backend=backend,
+                device="cpu" if backend == "reference" else "cuda:0",
+                time_step=0.5,
+                validation_time_step=0.025,
+                time_limit=120,
+            ),
+        )
+        skills = tuple(
+            Skill(
+                name=r.name,
+                robots=(r.name,),
+                minimum_duration=0.5,
+                options=(
+                    SkillOption(
+                        name="inspect",
+                        trace=JointTrace(
+                            times=(0, 0.5),
+                            interpolation="quintic_stop",
+                            tracks=(
+                                RobotTrajectory(
+                                    robot=r.name,
+                                    joint_names=model.joint_order,
+                                    positions=(r.start, r.start),
+                                ),
+                            ),
+                        ),
+                    ),
+                ),
+            )
+            for r in robots
+        )
+        problem = ManipulationProblem(
+            scene=scene,
+            objects=(),
+            initial_mode=ManipulationMode(name="initial", states=()),
+            goal_mode=ManipulationMode(name="goal", states=()),
+            skeleton=ScheduleSkeleton(skills=skills),
+            cost=ManipulationCost(
+                makespan=weights[0],
+                completion=weights[1],
+                distance=weights[2],
+                distance_metric=metric,
+            ),
+        )
+        plan = ManipulationPlan(
+            makespan=4.5,
+            skills=tuple(
+                ScheduledSkill(skill=s.name, option="inspect", start=0, end=0.5) for s in skills
+            ),
+            motions=tuple(
+                ScheduledMotion(
+                    start=0.5,
+                    end=4.5,
+                    trace=JointTrace(
+                        times=times,
+                        interpolation="quintic_stop",
+                        tracks=(
+                            RobotTrajectory(
+                                robot=r.name, joint_names=model.joint_order, positions=q
+                            ),
+                        ),
+                    ),
+                )
+                for r, (q, times) in zip(robots, rows, strict=True)
+            ),
+            final_mode=problem.goal_mode,
+        )
+        candidate = ManipulationResult(
+            status="candidate",
+            plan=plan,
+            provenance=PlanProvenance(problem_digest=document_digest(problem), config=scene.config),
+        )
+        result = verify_manipulation(problem, candidate)
+        assert result.status == "success", result
+        return problem, result
+
+    return build

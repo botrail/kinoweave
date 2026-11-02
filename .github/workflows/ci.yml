@@ -65,8 +65,15 @@ jobs:
           from pathlib import Path
           from kinoweave.assets import load_visuals
           from kinoweave.visualization import ViserViewer
+          from kinoweave.manipulation import SingleArmPlanner, MultiArmPlanner, validate_manipulation
+          from kinoweave.manipulation import refine_manipulation, evaluate_objective
+          from kinoweave.manipulation import SchedulePlanner, TaskDomain
           assert Path(kinoweave.__file__).is_relative_to(Path("/tmp/kinoweave-wheel"))
           assert callable(load_visuals) and callable(ViserViewer)
+          assert callable(SingleArmPlanner) and callable(validate_manipulation)
+          assert callable(MultiArmPlanner)
+          assert callable(refine_manipulation) and callable(evaluate_objective)
+          assert callable(SchedulePlanner) and callable(TaskDomain)
           for name in ("numpy", "torch", "curobo", "viser", "yourdfpy", "yaml"):
               assert importlib.util.find_spec(name) is None, name
           PY
@@ -74,6 +81,10 @@ jobs:
           /tmp/kinoweave-wheel/bin/kinoweave plan /tmp/arms.json --samples 0 --output /tmp/arms-run > /dev/null
           /tmp/kinoweave-wheel/bin/kinoweave validate /tmp/arms-run/problem.json /tmp/arms-run/result.json
           /tmp/kinoweave-wheel/bin/kinoweave playback /tmp/arms-run/problem.json /tmp/arms-run/result.json --output /tmp/playback.json > /dev/null
+          /tmp/kinoweave-wheel/bin/python "$GITHUB_WORKSPACE/examples/single_arm_pick_place.py" --output /tmp/pick-place
+          /tmp/kinoweave-wheel/bin/python "$GITHUB_WORKSPACE/examples/two_arm_handover.py" --refine --refinement-iterations 1 --refinement-seconds 30 --output /tmp/handover
+          /tmp/kinoweave-wheel/bin/python "$GITHUB_WORKSPACE/examples/task_scheduling.py" --output /tmp/task-run
+          /tmp/kinoweave-wheel/bin/python "$GITHUB_WORKSPACE/examples/many_arm_inspection.py" --robots 4 --tasks 4 --topology paired --output /tmp/many-tools
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: distributions

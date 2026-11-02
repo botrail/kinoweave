@@ -36,17 +36,24 @@ Other platforms and Python versions are outside the supported configuration.
 | Static environment | Sphere and oriented box obstacles. |
 | Planning | Individual PRMs, shared-tick quintic-stop motions, waits, prioritized or LaCAM-style search, and small finite product A*. |
 | Result exchange | Strict schema v1 JSON, input identity, provenance, diagnostic settings, and shared-time trajectories. |
+| Manipulation | Placed/held geometry, CPU/CUDA state conflict tables, task progress, atomic bimanual skills, fixed-skeleton multi-arm search, and independent CPU verification. |
+| Refinement | Explicit completion/distance objectives and bounded anytime single-/multi-arm shortcuts with independent acceptance checks. |
+| Task scheduling | Finite grounded alternatives, symbolic/resource ordering, retry feedback, shared geometry and verified incumbents. |
 | Playback | SDK-free kinematic snapshots, arbitrary seeks, read-back observations, and file reports. |
-| Visualization | Optional Viser browser playback of native frames, proxies, axes, obstacles, and compiled link meshes. |
+| Visualization | Optional Viser playback of native robot frames/meshes and separate manipulation playback with object states. |
 | Scene authoring | Optional expanded URDF 1.0 subset, explicit planning YAML, and multi-instance scene YAML. |
 
 The initial application scope is two fixed arms, including the supplied UR5
 scene. Larger robot counts, dense industrial cells, arbitrary mesh collision,
-general automatic sphere fitting, MJCF/USD import, attachments, manipulation
-events, mobile bases, dynamics, and physical control are outside the supported
+general automatic sphere fitting, MJCF/USD import, continuous task/grasp
+synthesis, mobile bases, dynamics, and physical control are outside the supported
 scope. URDF support is limited to the [documented subset](scene-authoring.md#supported-urdf-subset).
 The memory player requires at least one independent joint per robot.
 Represent static bodies as obstacles.
+
+The [experimental scaling example](performance.md) exercises two, four and
+eight Cartesian tool proxies. Its functional scope is separate from the
+supported real-arm geometry and deployment scope above.
 
 Collision results have level `sampled`. Whole-interval analytic checks cover
 position/velocity/acceleration limits for the declared time law; collision

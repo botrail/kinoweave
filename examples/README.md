@@ -19,9 +19,30 @@ corridor walls.
 | Example | Purpose |
 | --- | --- |
 | [contract_roundtrip.py](contract_roundtrip.py) | Read and write native data records. |
+| [manipulation_contract.py](manipulation_contract.py) | Create a symbolic object-transfer input and an unstarted result, without planning. |
+| [single_arm_pick_place.py](single_arm_pick_place.py) | Generate PRM connectors around configured skills, verify object geometry, and optionally display a Pick & Place. |
+| [two_arm_handover.py](two_arm_handover.py) | Coordinate two arms through Pick, an atomic bimanual Handover, and Place using prefetched conflict tables. |
+| [task_scheduling.py](task_scheduling.py) | Retry configured assignments and skill options, then improve a serial inspection schedule to parallel work. |
+| [many_arm_inspection.py](many_arm_inspection.py) | Explore experimental two/four/eight-tool inspection in shared or paired synthetic workspaces. |
 | [reference_coordination.py](reference_coordination.py) | Search a small supplied graph with the CPU reference. |
 | [coordinated_planning.py](coordinated_planning.py) | Plan a retreat with the main planner on CPU or CUDA. |
 | [playback_plan.py](playback_plan.py) | Record kinematic playback of a saved plan. |
+
+Pass `--refine` to `two_arm_handover.py` to save the first plan, improve it,
+and display the best plan with `--view`. See
+[objectives and refinement](../docs/refinement.md) for metric definitions,
+budgets, progress callbacks, and the cost history.
+
+Run `python examples/task_scheduling.py --output /tmp/task-run` for finite
+assignment/parameter/order search. Add `--view` in the visualization environment
+for standalone playback, or `--backend curobo` in the CUDA environment.
+See [task scheduling](../docs/task-scheduling.md) for catalogs, retry feedback,
+shared geometry, budgets and the selected input/result pair.
+
+For a larger proxy example, run
+`python examples/many_arm_inspection.py --robots 8 --tasks 40 --topology paired --output /tmp/eight-tools`.
+Add `--view` in the visualization environment. See
+[scaling and measurement](../docs/performance.md) for the layout and evidence boundaries.
 
 ## GPU geometry and roadmaps
 

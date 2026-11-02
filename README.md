@@ -13,6 +13,19 @@ sampled collision validation, and an SDK-free memory player. The optional
 cuRobo V2 backend adds CUDA geometry and tiled motion-pair checking.
 Optional Viser visualization and URDF/scene-YAML import support standalone
 browser demos, including two UR5 arms with real meshes.
+The [single-arm manipulation API](docs/manipulation.md) plans Pick & Place
+connectors around configured skills, with placed/held object geometry,
+mode-specific PRM masks, independent CPU verification, and object playback.
+The [multi-arm manipulation planner](docs/multi-arm-manipulation.md) adds
+task progress, uninterrupted skills, atomic bimanual choices, and eager
+CPU/CUDA conflict tables before lazy coordinated search.
+[Anytime refinement](docs/refinement.md) evaluates the declared objective
+and adopts independently verified single- or multi-arm shortcuts.
+[Task schedule search](docs/task-scheduling.md) selects configured assignments,
+skill parameters and resource orders, retries failed skeletons, and retains
+the best verified plan across candidates.
+An [experimental scaling example](docs/performance.md) exercises two, four
+and eight synthetic tools with longer inspection task lists.
 
 This is a development release. Planning uses link-attached collision spheres
 and static sphere/box obstacles. Collision validation is sampled, and playback
@@ -59,7 +72,8 @@ authoring, and adapter contracts. English is the default documentation language.
 KinoWeave is an independent implementation inspired by
 [cuArms](https://arxiv.org/abs/2610.36250) and
 [LaCAM](https://arxiv.org/abs/2211.13432). Its current scope is joint-space
-start-to-goal coordination. It does not reproduce cuArms' full manipulation
+start-to-goal coordination, multi-arm manipulation and finite task-catalog search.
+It does not reproduce cuArms' full manipulation
 planning system or claim the paper's benchmark performance. See the
 [FAQ](docs/faq.md#is-kinoweave-a-reproduction-of-cuarms) for the distinction.
 

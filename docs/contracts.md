@@ -179,8 +179,10 @@ with the original time law, including velocities when supplied.
 
 ## JSON compatibility and errors
 
-The three root formats are `kinoweave.problem`, `kinoweave.result`, and
-`kinoweave.execution`. Every JSON document must explicitly include `format`,
+The motion-only root formats are `kinoweave.problem`, `kinoweave.result`, and
+`kinoweave.execution`. Separate [manipulation data contracts](manipulation-contracts.md)
+add `kinoweave.manipulation.problem` and `kinoweave.manipulation.result`.
+Every JSON document must explicitly include `format`,
 integer `schema_version: 1`, and a `conventions` object. Fields with defaults
 may be omitted; serialization writes them explicitly.
 

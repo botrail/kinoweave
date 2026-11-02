@@ -7,18 +7,31 @@ roadmaps, GPU-batched conflict tables, and lazy coordinated search described
 in [cuArms](https://arxiv.org/abs/2610.36250). Its lazy search also draws on
 [LaCAM](https://arxiv.org/abs/2211.13432).
 
-The current scope is fixed-base, joint-space start-to-goal coordination,
-including waits and retreats. It does not implement cuArms' manipulation
-modes, skill edges, schedule-skeleton planning, or anytime trajectory
-refinement. It makes no claim of reproducing the paper's full algorithm,
-benchmark results, or performance.
+The current planner handles fixed-base, joint-space start-to-goal
+coordination, including waits and retreats. Separate
+[manipulation APIs](manipulation.md) support object modes, configured skills,
+mode-specific PRM masks, independent verification, and single-arm Pick & Place.
+[Multi-arm manipulation](multi-arm-manipulation.md) adds task-progress search,
+uninterrupted skills, atomic bimanual choices, and eager conflict tables.
+[Anytime refinement](refinement.md) adds explicit objective evaluation and
+verified free-motion shortcuts. [Task schedule search](task-scheduling.md)
+adds finite configured assignment, parameter and resource-order choices,
+retry feedback, and a verified best plan across skeletons. Continuous
+grasp/IK synthesis and the paper's full task solver remain absent.
+KinoWeave makes no claim of
+reproducing the paper's full algorithm, benchmark results, or performance.
+See [scaling and measurement](performance.md) for the synthetic larger cases
+and the conditions required for a published-benchmark comparison.
 
 ## Which parts run on the GPU?
 
 With the `curobo` backend, forward kinematics and self/static geometry checks
 use cuRobo V2. PyTorch evaluates batches of candidate motions and inter-robot
-sphere conflicts on CUDA. Coordinated search runs on the CPU and looks up
-reduced compatibility tables. Returned plans undergo independent CPU
+sphere conflicts on CUDA. Manipulation masks add placed/held object sphere
+checks and reuse robot geometry across modes. Multi-arm manipulation prefetches
+each state's complete candidate conflict table before recursive selection.
+Coordinated search runs on the CPU and looks up reduced compatibility tables.
+Returned plans undergo independent CPU
 validation. See [planning](planning.md) and [GPU interference](roadmaps.md).
 
 ## Can I use KinoWeave without a GPU?
